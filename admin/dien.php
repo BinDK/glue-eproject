@@ -2,7 +2,7 @@
 require_once 'connect.php';
 $result = mysqli_query($con,'select * from db_animal');
  ?>
-
+<h1> Anh Dien</h1>
 <table>
 	<tr>
 		<th>ID</th>

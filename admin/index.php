@@ -84,7 +84,7 @@ Action menu
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="dien.php">Animal - Dien</a> 
-                                    <a class="nav-link" href="admin_category.php">Category - Hung123</a>
+                                    <a class="nav-link" href="admin_category.php">Category - Hung123-456</a>
                                     <a class="nav-link" href="admin_event.php">Event - Thanh</a>
                                     <a class="nav-link" href="admin_feedback.php">Feedback - Binh</a>
                                     <a class="nav-link" href="admin_ticket.php">Ticket - Binh</a>

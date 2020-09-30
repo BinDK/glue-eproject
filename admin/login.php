@@ -1,19 +1,18 @@
 <?php  
 require_once 'connect.php';
 $result = mysqli_query($con, 'select * from db_user');
-$account = mysqli_fetch_array($result);
 session_start();
 $msg = null;
 if (isset($_POST['btnLogin'])) {
 			$username = $_POST['username'];
 			$password = $_POST['password'];
-			if ($username == $account['username'] && $password == $account['password']) {
+			while ($account = mysqli_fetch_array($result)) {
+            if ($username == $account['username'] && $password == $account['password']) {
 				$_SESSION['admin'] = $username;
 				header('Location:index.php');
-			}else {
-				$msg = 'Invalid';
-			}
-}
+			  } else { $msg = 'Invalid'; }
+            }
+    }
 ?>
 
 

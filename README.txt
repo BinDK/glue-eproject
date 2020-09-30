@@ -1,5 +1,27 @@
-File này để để ghi nhớ cách dùng GIT:
+File này để UPDATE workflow và ghi nhớ cách dùng GIT:
 
+UPDATE:
+30/9: 
+		- Bình: Xong login/logout/changepass, chưa xong trả lời user feedback + ticket
+
+		- Anh Hưng: _ Trang người dùng xong + chưa đổ dữ liệu vào(photo+description) 
+					_ Đã đưa GeoLocation API vào trang user 
+
+
+
+
+**TO-DO:
+
+
+
+
+
+
+
+
+
+*** Ctrl/command + shift + m trên windows/mac để coi reponsive chrome + mozilla
+****DÙNG GIT
 1)
 viết xong 
  git add `file vừa vừa` hoặc ./ để add file tất cả vào

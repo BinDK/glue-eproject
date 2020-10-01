@@ -2,7 +2,6 @@
 session_start();
 if(!isset($_SESSION['admin'])){
     header('Location:login.php');
-
 }
 
 if (isset($_GET['action'])) {
@@ -12,7 +11,6 @@ if (isset($_GET['action'])) {
         header('Location:index.php');
     } 
 }
-
  ?>
 
 

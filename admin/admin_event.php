@@ -20,7 +20,6 @@ $result = mysqli_query($con,'select * from db_event');
      	mysqli_query($con, 'update db_event set title = "'.$title.'",detail = "'.$detail.'", date = "'.$date.'", description = "'.$description.'" where id ='.$id);
      	// header('Location:index.php?page=admin_event');
      } 
-$test = 'taass';
 
 
 
@@ -84,7 +83,7 @@ while ($event = mysqli_fetch_array($result)) {
                 <td><?= $event['detail'] ?></td>
                 <td><?= $event['date'] ?></td>
                 <td><?= $event['description'] ?></td>
-                <td align="center"><button href="index.php?page=admin_event&id=<?= $event['id']?>"  onclick="showFunction()">Edit</button> |
+                <td align="center"><a href="index.php?page=admin_event&id=<?= $event['id']?>" >Edit</a> |
                 <a onclick="return confirm('Are you really want to delete it??')" href="index.php?page=admin_event&id=<?= $event['id']?>&action=deleteEvent">Delete</a>
                 </td>
             </tr>
@@ -97,7 +96,7 @@ while ($event = mysqli_fetch_array($result)) {
     </div>
     </div>
     </div>
-    <form method="post" id="addForm" style="display:none;">
+    <form method="post" id="addForm" action="index.php?page=admin_event&id=<?= $event['id']?>" >
 	<table>
 		<tr>
 			<td>Ttile</td>
@@ -118,7 +117,7 @@ while ($event = mysqli_fetch_array($result)) {
 
 			<td>
 				<input type="submit" name="editEventButton" value="value">
-				<input type="hidden" name="id" value="<?= $_GET['id']; ?>">
+				<input type="hidden" name="id" value="<?= $_GET['id'];?>">
 			</td>
 		</tr>
 	</table>

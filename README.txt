@@ -4,8 +4,8 @@ UPDATE:
 30/9: 
 		- Bình: Xong login/logout/changepass, chưa xong trả lời user feedback + ticket
 
-		- Anh Hưng: _ Trang người dùng xong + chưa đổ dữ liệu vào(photo+description) 
-					_ Đã đưa GeoLocation API vào trang user 
+		- Anh Hưng: _ Trang người dùng xong + chưa đổ dữ liệu vào(photo+description)
+				_Đã đưa GeoLocation API vào trang user 
 
 
 
@@ -20,7 +20,7 @@ UPDATE:
 
 
 
-*** Ctrl/command + shift + m trên windows/mac để coi reponsive chrome + mozilla
+*** Ctrl/command + shift + m trên windows/mac để coi responsive chrome + mozilla
 ****DÙNG GIT
 1)
 viết xong 

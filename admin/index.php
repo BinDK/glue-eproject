@@ -5,6 +5,13 @@ if(!isset($_SESSION['admin'])){
 
 }
 
+if (isset($_GET['action'])) {
+    if ($_GET['action'] == 'delete') {
+        $id = $_GET['id'];
+        mysqli_query($con, 'delete from db_feedback where id = '.$id); 
+        header('Location:index.php');
+    } 
+}
 
  ?>
 
@@ -81,12 +88,12 @@ Action menu
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="dien.php">Animal - Dien</a> 
-                                    <a class="nav-link" href="admin_category.php">Category - Hung123-456</a>
-                                    <a class="nav-link" href="admin_event.php">Event - Thanh</a>
-                                    <a class="nav-link" href="admin_feedback.php">Feedback - Binh</a>
-                                    <a class="nav-link" href="admin_ticket.php">Ticket - Binh</a>
-                                    <a class="nav-link" href="admin_gallery.php">Gallery - Hung</a>
+                                    <a class="nav-link" href="index.php?page=dien">Animal - Dien</a> 
+                                    <a class="nav-link" href="index.php?page=admin_category">Category - Hung123-456</a>
+                                    <a class="nav-link" href="index.php?page=admin_event">Event - Thanh</a>
+                                    <a class="nav-link" href="index.php?page=admin_feedback">Feedback - Binh</a>
+                                    <a class="nav-link" href="index.php?page=admin_ticket">Ticket - Binh</a>
+                                    <a class="nav-link" href="index.php?page=admin_gallery">Gallery - Hung</a>
                                 </nav>
                             </div>
 
@@ -104,10 +111,6 @@ Action menu
 
                         
                         <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table mr-1"></i>
-                                User Feedback
-                            </div>
                     <?php require_once isset($_GET['page']) ? $_GET['page'].'.php' : 'table_feedback.php'; ?>
 
                 </div>
@@ -130,11 +133,8 @@ Action menu
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="assets/demo/chart-area-demo.js"></script>
-        <script src="assets/demo/chart-bar-demo.js"></script>
-        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+        <script src="js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+        <script src="js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
         <script src="assets/demo/datatables-demo.js"></script>
     
 

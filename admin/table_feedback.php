@@ -9,6 +9,10 @@ if (isset($_GET['action'])) {
     } 
 }
  ?>
+                             <div class="card-header">
+                                <i class="fas fa-table mr-1"></i>
+                                User Feedback
+                            </div>
 <div class="card-body">
             <div class="table-responsive">
             <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">

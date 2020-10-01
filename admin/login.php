@@ -1,18 +1,24 @@
 <?php  
 require_once 'connect.php';
-$result = mysqli_query($con, 'select * from db_user');
+// $result = mysqli_query($con, 'select * from db_user');
 session_start();
 $msg = null;
 if (isset($_POST['btnLogin'])) {
 			$username = $_POST['username'];
 			$password = $_POST['password'];
-			while ($account = mysqli_fetch_array($result)) {
-            if ($username == $account['username'] && $password == $account['password']) {
+			// while ($account = mysqli_fetch_array($result)) {
+            // if ($username == $account['username'] && $password == $account['password']) { sql injection chổ $result phía dưới
+            
+            $result = mysqli_query($con, 'select * from db_user where username = "'.$username.'" and password = "'.$password.'"');
+            
+            $account = mysqli_fetch_array($result);
+            if ($account) {
 				$_SESSION['admin'] = $username;
 				header('Location:index.php');
-			  } else { $msg = 'Invalid'; }
+			  } else if($username == '' || $password == '' ){$msg = 'Field cannot be empty!!';}
+               else { $msg = 'Invalid'; }
             }
-    }
+    // }
 ?>
 
 

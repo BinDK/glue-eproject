@@ -6,7 +6,8 @@ UPDATE:
 
 		- Anh Hưng: _ Trang người dùng xong + chưa đổ dữ liệu vào(photo+description)
 				_Đã đưa GeoLocation API vào trang user 
-
+		- Điện _ Sửa href trong index.php: dien.php --> index.php?page=dien
+			Xong file thêm xóa sửa Admin_animals.
 
 
 

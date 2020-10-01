@@ -19,7 +19,9 @@ if (isset($_POST['btnChange'])) {
                 $msg = '<span style="color:red !important;">New Password do not match!!</span>';
             }
             else{
+                // password_hash($password2, PASSWORD_BCRYPT);
                 $success = '<span style="color:green !important;">You just change your password, heading to Login page after 3second.</span>';
+                // mysqli_query($con,'update db_user set password = "'.password_hash($password2, PASSWORD_BCRYPT).'" where id = 1');
                 mysqli_query($con,'update db_user set password = "'.$password2.'" where id = 1');
                 header( "Refresh:3; url=login.php?action=logout", true, 303);
             }

@@ -5,6 +5,38 @@ if(!isset($_SESSION['admin'])){
 
 }
 
+if (isset($_POST['addEventButton'])) {
+        header('Location:index.php?page=admin_event');
+     } 
+if (isset($_POST['btnChangeEvent'])) {
+       header('Location:index.php?page=admin_event'); 
+     }
+if (isset($_GET['action'])) {
+      if ($_GET['action'] == 'deleteEvent') {
+        $id = $_GET['id'];
+        mysqli_query($con, 'delete from db_event where id = '.$id); 
+        header('Location:index.php?page=admin_event');
+     }  
+}
+
+
+if (isset($_POST['addTicketButton'])) {
+        header('Location:index.php?page=admin_ticket');
+     } 
+if (isset($_POST['btnChangeTicket'])) {
+       header('Location:index.php?page=admin_ticket'); 
+     }
+if (isset($_GET['action'])) {
+      if ($_GET['action'] == 'deleteTicket') {
+        $id = $_GET['id'];
+        mysqli_query($con, 'delete from db_ticket where id = '.$id); 
+        header('Location:index.php?page=admin_ticket');} 
+}
+
+
+if (isset($_POST['btnAnswer'])) {
+       header('Location:index.php'); 
+    }
 if (isset($_GET['action'])) {
     if ($_GET['action'] == 'deleteFB') {
         $id = $_GET['id'];
@@ -12,41 +44,7 @@ if (isset($_GET['action'])) {
         header('Location:index.php');
     }
 }
-    if (isset($_GET['action'])) {
-      if ($_GET['action'] == 'deleteEvent') {
-        $id = $_GET['id'];
-        mysqli_query($con, 'delete from db_event where id = '.$id); 
-        header('Location:index.php?page=admin_event');
-    }  
-}
-
-if (isset($_POST['editEventButton'])) {
-        header('Location:index.php?page=admin_event');
-     } 
  ?>
-
-
-<!-- <html>
-    <head>
-        <title>Admin Page</title>
-    </head>
-    <body>
-        Welcome < ?  = $_SESSION['admin'] ?><a href="login.php?action=logout">Log-out</a>&nbsp;&nbsp;
-        <a href="index.php?page=menu1">Menu 1</a>
-        <a href="index.php?page=menu2">Menu 2</a>
-        <a href="index.php?page=menu3">Menu 3</a>
-        <br><br>
-        < ? php 
-        require_once isset($_GET['page']) ? $_GET['page'].'.php' : 'menu1.php'; 
-        ? >
-
-
-
-Action menu
-
-    </body>
-</html> -->
-
 
 
 <html class="fontawesome-i2svg-active fontawesome-i2svg-complete" lang="en">
@@ -60,11 +58,7 @@ Action menu
         <link href="css/styleTable.css" rel="stylesheet" crossorigin="anonymous">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
 
-        <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
-    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
-    <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
 </head>
-<!--  -->
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <a class="navbar-brand" href="index.php">Start Bootstrap</a>
@@ -105,7 +99,7 @@ Action menu
                                     <a class="nav-link" href="index.php?page=dien">Animal - Dien</a> 
                                     <a class="nav-link" href="index.php?page=admin_category">Category - Hung123-456</a>
                                     <a class="nav-link" href="index.php?page=admin_event">Event - Thanh</a>
-                                    <a class="nav-link" href="index.php?page=admin_feedback">Feedback - Binh</a>
+                                    <a class="nav-link" href="index.php">Feedback - Binh</a>
                                     <a class="nav-link" href="index.php?page=admin_ticket">Ticket - Binh</a>
                                     <a class="nav-link" href="index.php?page=admin_gallery">Gallery - Hung</a>
                                 </nav>
@@ -119,15 +113,12 @@ Action menu
                 <main>
                     <div class="container-fluid">
                         <h1 class="mt-4">Dashboard</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
-                        </ol>
 
                         
-                        <div class="card mb-4">
-                    <?php require_once isset($_GET['page']) ? $_GET['page'].'.php' : 'table_feedback.php'; ?>
 
-                </div>
+                    <?php require_once isset($_GET['page']) ? $_GET['page'].'.php' : 'admin_feedback.php'; ?>
+
+
 </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">
@@ -144,7 +135,10 @@ Action menu
                 </footer>
             </div>
         </div>
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script> -->
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
         <script src="js/jquery.dataTables.min.js" crossorigin="anonymous"></script>

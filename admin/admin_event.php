@@ -10,37 +10,22 @@ $result = mysqli_query($con,'select * from db_event');
     } 
 
 }
-
-    if (isset($_POST['editEventButton'])) {
-    	$id = $_POST['id'];
-     	$title =  $_POST['editTitle'];
-     	$detail =  $_POST['editDetail'];
-     	$description = $_POST['editDescription'];
-     	$date = $_POST['editDate'];
-     	mysqli_query($con, 'update db_event set title = "'.$title.'",detail = "'.$detail.'", date = "'.$date.'", description = "'.$description.'" where id ='.$id);
-     	// header('Location:index.php?page=admin_event');
-     } 
-
-
-
-
+         if (isset($_POST['addEventButton'])) {
+     	$title =  $_POST['addTitle'];
+     	$detail =  $_POST['addDetail'];
+     	$description = $_POST['addDescription'];
+    	$date = explode('/', $_POST['addDate']);
+		$created = $date[2].'-'.$date[0].'-'.$date[1];
+     	mysqli_query($con, 'INSERT INTO db_event (title, detail, date, description) values ("'.$title.'","'.$detail.'","'.$created.'","'.$description.'")');
+     }
  ?>
 
 
-
-<script>
-	function showFunction() {
-  var show = document.getElementById("addForm");
-  if (show.style.display === "none") {
-    show.style.display = "block";
-  } else {
-    show.style.display = "none";
-  }
-
-
-}
-</script>
-
+<ol class="breadcrumb mb-4">
+<li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+<li class="breadcrumb-item active">Event</li>
+</ol>
+  <div class="card mb-4">
 <div class="card-header">
 <i class="fas fa-table mr-1"></i> Event </div>
 <div class="card-body">
@@ -83,7 +68,7 @@ while ($event = mysqli_fetch_array($result)) {
                 <td><?= $event['detail'] ?></td>
                 <td><?= $event['date'] ?></td>
                 <td><?= $event['description'] ?></td>
-                <td align="center"><a href="index.php?page=admin_event&id=<?= $event['id']?>" >Edit</a> |
+                <td align="center"><a href="index.php?page=admin_event_edit&id=<?= $event['id']; ?>">Edit</a> |
                 <a onclick="return confirm('Are you really want to delete it??')" href="index.php?page=admin_event&id=<?= $event['id']?>&action=deleteEvent">Delete</a>
                 </td>
             </tr>
@@ -95,37 +80,39 @@ while ($event = mysqli_fetch_array($result)) {
 
     </div>
     </div>
+    	<div>
+    		<button onclick="showAdd()" class="btn btn-primary">Add more Event</button>
+    	</div>
     </div>
-    <form method="post" id="addForm" action="index.php?page=admin_event&id=<?= $event['id']?>" >
-	<table>
-		<tr>
-			<td>Ttile</td>
-			<td><input type="text" name="editTitle"></td>
-		</tr>
-		<tr>
-			<td>Detail</td>
-			<td><input type="text" name="editDetail"></td>
-		</tr>
-		<tr>
-			<td>Date</td>
-			<td><input type="text" name="editDate" id="created"></td>
-		</tr>
-		<tr>
-			<td>Description</td>
-			<td><input type="text" name="editDescription"></td>
-		</tr>
+</div>
 
-			<td>
-				<input type="submit" name="editEventButton" value="value">
-				<input type="hidden" name="id" value="<?= $_GET['id'];?>">
-			</td>
-		</tr>
-	</table>
- </form>
+    <form method="post" id="addForm" style="display:none; margin:10px 50px;">
+    	<h5>Add more Event </h5>
+			<input type="text" name="addTitle" placeholder="Enter Title">
+			<input type="text" name="addDetail" placeholder="Enter Detail">
+			<input type="text" name="addDate" id="created" placeholder="Choose Date ">
+			<input type="text" name="addDescription" placeholder="Enter Description ">
 
-   <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
-    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
-  <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
-  <!-- <script> -->
+				<input type="submit" name="addEventButton" value="Submit">
+</form>
 
-  <!-- </script> -->
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  	    	  $( function() {
+    $( "#created" ).datepicker();
+  } );
+  </script>
+
+<script>
+
+	function showAdd() {
+  var show = document.getElementById("addForm");
+  if (show.style.display === "none") {
+    show.style.display = "block";
+  } else {
+    show.style.display = "none";
+  }
+}
+</script>

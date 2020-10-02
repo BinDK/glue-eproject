@@ -8,11 +8,10 @@ if(isset($_POST['buttonAdd'])){
 	$name = $_POST['species_name'];
 	$description = $_POST['description'];
 	mysqli_query($con,'insert into db_category(species_name,description) values ("'.$name.'","'.$description.'")');
-	header('location:admin_category.php');
 }
 $result = mysqli_query($con, 'select * from db_category');
 ?>
-<form action="admin_category.php" method="post" style="width:300px">
+<form  method="post" style="width:300px">
   <div class="form-group">
     <label for="species_name">Category's name:</label>
     <input type="text" class="form-control" name="species_name">
@@ -21,7 +20,7 @@ $result = mysqli_query($con, 'select * from db_category');
     <label for="description">Description:</label>
     <textarea name="description" cols="20" rows="5"></textarea>
   </div>
-  <input type="submit" name="buttonAdd" value="Add" id="created">
+  <input type="submit" name="buttonAdd" value="Add" id="created" class="btn btn-primary">
 </form>
 <table class="table table-bordered" style="width:800px">
 	<tr style="text-align:center">

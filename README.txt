@@ -3,6 +3,10 @@ File này để UPDATE workflow và ghi nhớ cách dùng GIT:
 UPDATE:
 4/10: -Admin thì mỏi phần việc thêm breadcrumb, dọn lại index
 		- Trang index.php của USER thì require đến các trang của mọi người
+		- footer, conatact, ticket Binh làm
+		_ event anh Thành là 
+		_ gallery anh Hưng làm 
+		- Animal, category anh Điện làm 
 
 
 

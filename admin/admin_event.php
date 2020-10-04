@@ -15,8 +15,13 @@ $result = mysqli_query($con,'select * from db_event');
      	$detail =  $_POST['addDetail'];
      	$description = $_POST['addDescription'];
     	$date = explode('/', $_POST['addDate']);
-		$created = $date[2].'-'.$date[0].'-'.$date[1];
-     	mysqli_query($con, 'INSERT INTO db_event (title, detail, date, description) values ("'.$title.'","'.$detail.'","'.$created.'","'.$description.'")');
+		  $created = $date[2].'-'.$date[0].'-'.$date[1];
+
+
+          $photo = date('YmHis').$_FILES['addPhoto']['name'];
+  copy($_FILES['addPhoto']['tmp_name'], '../img/eventUpload/'.$photo);
+  echo 'INSERT INTO db_event (title, detail, date, event_photo, description) values ("'.$title.'","'.$detail.'","'.$created.'","'.$photo.'","'.$description.'")';
+      mysqli_query($con, 'INSERT INTO db_event (title, detail, date, event_photo, description) values ("'.$title.'","'.$detail.'","'.$created.'","'.$photo.'","'.$description.'")');
      }
  ?>
 
@@ -41,7 +46,8 @@ $result = mysqli_query($con,'select * from db_event');
     <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 137.733px;" aria-label="Position: activate to sort column ascending">Title</th>
     <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 153.9px;" aria-label="Office: activate to sort column ascending">Detail</th>
     <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 70.2833px;" aria-label="Age: activate to sort column ascending">Date</th>
-    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 329.55px;" aria-label="Start date: activate to sort column ascending">Desciption</th>
+    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 50.2833px;" aria-label="Photo: activate to sort column ascending">Photo</th>
+    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 280.55px;" aria-label="Start date: activate to sort column ascending">Desciption</th>
     <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 119.067px;" aria-label="Salary: activate to sort column ascending">Edit</th>
 </tr>
 </thead>
@@ -50,6 +56,7 @@ $result = mysqli_query($con,'select * from db_event');
     <th rowspan="1" colspan="1">Title</th>
     <th rowspan="1" colspan="1">Detail</th>
     <th rowspan="1" colspan="1">Date</th>
+    <th rowspan="1" colspan="1">Photo</th>
     <th rowspan="1" colspan="1">Desciption</th>
     <th rowspan="1" colspan="1">Edit</th>
 </tr>
@@ -67,6 +74,7 @@ while ($event = mysqli_fetch_array($result)) {
                 <td><?= $event['title'] ?></td>
                 <td><?= $event['detail'] ?></td>
                 <td><?= $event['date'] ?></td>
+                <td><img src="../img/eventUpload/<?= $event['event_photo'] ?>" width="50" height="50"></td>
                 <td><?= $event['description'] ?></td>
                 <td align="center"><a href="index.php?page=admin_event_edit&id=<?= $event['id']; ?>">Edit</a> |
                 <a onclick="return confirm('Are you really want to delete it??')" href="index.php?page=admin_event&id=<?= $event['id']?>&action=deleteEvent">Delete</a>
@@ -86,11 +94,12 @@ while ($event = mysqli_fetch_array($result)) {
     </div>
 </div>
 
-    <form method="post" id="addForm" style="display:none; margin:10px 50px;">
+    <form method="post" id="addForm" style="display:none; margin:10px 50px;" enctype="multipart/form-data">
     	<h5>Add more Event </h5>
 			<input type="text" name="addTitle" placeholder="Enter Title">
 			<input type="text" name="addDetail" placeholder="Enter Detail">
 			<input type="text" name="addDate" id="created" placeholder="Choose Date ">
+      <input type="file" name="addPhoto" width="20">
 			<input type="text" name="addDescription" placeholder="Enter Description ">
 
 				<input type="submit" name="addEventButton" value="Submit">

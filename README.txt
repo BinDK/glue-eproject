@@ -1,6 +1,12 @@
 File này để UPDATE workflow và ghi nhớ cách dùng GIT:
 
 UPDATE:
+4/10: -Admin thì mỏi phần việc thêm breadcrumb, dọn lại index
+		- Trang index.php của USER thì require đến các trang của mọi người
+
+
+
+
 30/9: 
 		- Bình: Xong login/logout/changepass, chưa xong trả lời user feedback + ticket
 

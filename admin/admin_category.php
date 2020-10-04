@@ -11,6 +11,11 @@ if(isset($_POST['buttonAdd'])){
 }
 $result = mysqli_query($con, 'select * from db_category');
 ?>
+<h1 class="mt-4">Category</h1>
+ <ol class="breadcrumb mb-4">
+<li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+<li class="breadcrumb-item active">Animal</li>
+</ol>
 <form  method="post" style="width:300px">
   <div class="form-group">
     <label for="species_name">Category's name:</label>

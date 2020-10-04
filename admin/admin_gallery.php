@@ -13,7 +13,11 @@ if(isset($_POST['buttonAdd'])){
 }
 $result = mysqli_query($con, 'select * from db_gallary');
 ?>
-<h3>Gallery Upload</h3>
+<h1 class="mt-4">Gallery</h1>
+ <ol class="breadcrumb mb-4">
+<li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+<li class="breadcrumb-item active">Gallery</li>
+</ol>
 <form method="post" style="width:300px" enctype="multipart/form-data">
   <div class="form-group">
     <label for="name">Name</label>

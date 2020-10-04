@@ -19,7 +19,7 @@ $result = mysqli_query($con,'select * from db_ticket');
  ?>
 
 
-
+<h1 class="mt-4">Ticket</h1>
 <ol class="breadcrumb mb-4">
 <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
 <li class="breadcrumb-item active">Ticket</li>

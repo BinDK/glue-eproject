@@ -36,7 +36,11 @@ if (isset($_GET['action1'])) {
 };
 $result = mysqli_query($con, 'select * from db_animal');
 ?>
-<h1> Anh Dien</h1>
+<h1 class="mt-4">Animal</h1>
+ <ol class="breadcrumb mb-4">
+<li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+<li class="breadcrumb-item active">Animal</li>
+</ol>
 <table border="1">
 	<tr>
 		<th>ID</th>

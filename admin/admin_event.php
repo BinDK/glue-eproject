@@ -20,7 +20,7 @@ $result = mysqli_query($con,'select * from db_event');
      }
  ?>
 
-
+<h1 class="mt-4">Event</h1>
 <ol class="breadcrumb mb-4">
 <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
 <li class="breadcrumb-item active">Event</li>

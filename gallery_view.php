@@ -1,24 +1,33 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="bootstrap.min.css">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 <?php
 require_once 'admin/connect.php';
-$result = mysqli_query($con, 'select * from db_gallary where id =' . $_GET['id']);
-$resultAll = mysqli_query($con, 'select * from db_gallary');
-$gallery = mysqli_fetch_array($result)
+
+$resultEachItem = mysqli_query($con, 'select * from db_gallary');
+$galleryEachItem = mysqli_fetch_array($resultEachItem);
+$resultItem = mysqli_query($con, 'select * from db_gallary');
+$no_of_items = 0;
+while($resultArray = mysqli_fetch_array($resultItem)){
+    $no_of_items++;
+};
+$item_perpage = 2;
+$no_of_pages = ceil($no_of_items/$item_perpage);
+
+$page = [];
+for($i = 0;$i<$no_of_pages;$i++){
+    $page[$i]=$i+1;
+}
+$startItem = ($_GET['view']-1)*$item_perpage;
+$endItem = $startItem + $item_perpage;
+$result = mysqli_query($con, 'select * from db_gallary limit '.$item_perpage.' offset '.$startItem);
 ?>
-<?php require_once isset($_GET['page']) ? $_GET['page'] . '.php' : 'header.php'; ?>
-
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="bootstrap.min.css">
-
-    
+<?php require_once  'header.php' ?>
     <?php
         if($_GET['id']==="viewall"){?>
         <div class="container">
             <div class="row-event">
-                <?php while ($gallery = mysqli_fetch_array($resultAll)) { ?>
+                <?php while ($gallery = mysqli_fetch_array($result)) { ?>
                     <div class="col" style="max-width:320px">
                     <img src="./img/galleryUpload/<?= $gallery['fileAddress'] ?>" style="width:100%">
                     <h3><?= $gallery['name'] ?></h3>
@@ -31,10 +40,33 @@ $gallery = mysqli_fetch_array($result)
     <?php } else {?>
         <div class="container">
             <br>
-            <img src="./img/galleryUpload/<?= $gallery['fileAddress'] ?>" style="width:500px">
-            <h3><?= $gallery['name'] ?></h3>
-            <p><?= $gallery['description'] ?></p>
+            <img src="./img/galleryUpload/<?= $galleryEachItem['fileAddress'] ?>" style="width:500px">
+            <h3><?= $galleryEachItem['name'] ?></h3>
+            <p><?= $galleryEachItem['description'] ?></p>
         </div>
     <?php } ?>
+    <ul class="pagination">
+        <?php
+            $start = $_GET['view'];
+            $noItems = 3; //the real number is $noItems +1
+            $end = $start + $noItems;
+            if($end>count($page)){
+                $end = count($page);
+                $start = $end -$noItems;
+            }      
+        ?>
+        <?php if($_GET['view']>1){?>
+        <li class="page-item"><a class="page-link" href="gallery_view.php?id=viewall&view=<?= $_GET['view'] - 1 ?>">Previous</a></li>
+        <?php } ?>
+        <?php 
+            for($i=($start-1);$i<($end);$i++){?>
+                <li class="page-item"><a class="page-link" href="gallery_view.php?id=viewall&view=<?= $page[$i] ?>"><?= $page[$i] ?></a></li>
+        <?php } ?>
+        <?php if($end < count($page)){ ?>
+        <li class="page-item"><a class="page-link" href="gallery_view.php?id=viewall&view=<?= $start+1 ?>">Next</a></li>
+        <?php } ?>
+    </ul>
 
-    <?php require_once isset($_GET['page']) ? $_GET['page'] . '.php' : 'footer.php'; ?>
+    <?php require_once  'footer.php' ?>
+
+

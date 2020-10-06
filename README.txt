@@ -1,6 +1,9 @@
 File này để UPDATE workflow và ghi nhớ cách dùng GIT:
 
 UPDATE:
+6/10: Event: thêm ngày gần nhất, limit 3 event trên index
+		index: sửa lại background, footer
+
 4/10: -Admin thì mỏi phần việc thêm breadcrumb, dọn lại index
 		- Trang index.php của USER thì require đến các trang của mọi người
 		- footer, conatact, ticket Binh làm

@@ -15,7 +15,7 @@ $result = mysqli_query($con, 'SELECT * FROM db_event LIMIT 3 OFFSET 1');
       <img src="img/eventUpload/<?= $event['event_photo'] ?>" alt="John" style="width:347px;; height: 262px;">
       <h3><?= $event['title'] ?></h3>
       <p><?= $event['detail'] ?></p>
-      <p><button class="w3-button w3-light-grey w3-block"><a href="event_detail.php?id=<?= $event['id'] ?>">Deatil</a></button></p>
+      <p><button class="w3-button w3-light-grey w3-block"><a href="event_detail.php?id=<?= $event['id'] ?>">Detail</a></button></p>
     </div>
 <?php } ?>
 

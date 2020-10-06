@@ -6,3 +6,8 @@ a:hover{
     text-decoration: none;
     color: black;
 }
+body{
+	background-image: url('img/body/background.webp');
+}
+ol > li {list-style: none;}
+.list-social li {display: inline;}

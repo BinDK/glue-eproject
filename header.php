@@ -16,3 +16,4 @@
 <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
   <img class="w3-image" src="./img/avatar1.jpg" alt="Architecture" width="1500" height="500">
 </header>
+<br>

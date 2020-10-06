@@ -6,3 +6,18 @@ a:hover{
     text-decoration: none;
     color: black;
 }
+body{
+	background-image: url('img/body/background.webp');
+}
+ol > li {list-style: none;}
+.list-social{padding-left: 0;}
+.list-social li{display: inline; font-size: 30px !important;}
+.fa-facebook{color:gray !important;}
+.fa-facebook:hover{color:#3b5998 !important;}
+.fa-instagram{color:gray !important;}
+.fa-instagram:hover{color:#ef10d5 !important;}
+.fa-twitter{color:gray !important;}
+.fa-twitter:hover{color:#00aced !important;}
+.fa-youtube{color:gray !important;}
+>>>>>>> master
+.fa-youtube:hover{color:#bb0000 !important;}

@@ -1,6 +1,6 @@
 <?php 
 require_once 'admin/connect.php';
-$result = mysqli_query($con, 'select * from db_event');
+$result = mysqli_query($con, 'SELECT * FROM db_event LIMIT 3 OFFSET 1');
 
  ?>
 

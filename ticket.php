@@ -34,7 +34,7 @@ $price2 = $result2->fetch_array()[0];
 </div>
 
  
-<div class="container" id="ticketForm" style="padding: 0 100px;background-image: url('img/h1.gif');">
+<div class="container" id="ticketForm" style="padding: 10px 100px;background-image: url('img/h1.gif');">
     <form action="">
         <div class="row">
             <!-- Col left -->
@@ -63,9 +63,9 @@ $price2 = $result2->fetch_array()[0];
                         <span>
                             <?= $price1; ?> $</span>
                         <div class="ticket-quantity">
-                            <a class="ticket-button bg-secondary" style="border: 1px solid black; border-radius: 25px; padding: 3px 15px ;" href="#">-</a>
+                            <button type="button" class="btn ticket-button" style="border: 1px solid black; border-radius: 25px; padding: 3px 15px; font-size: 20px; color:brown;">-</button>
                             <input type="text" class="quntity-input" id="adult" style="width: 40px; text-align: center;" value="0">
-                            <a class="ticket-button bg-secondary" style="border: 1px solid black; border-radius: 25px; padding: 3px 15px ;" href="#">+</a>
+                            <button type="button" class="btn ticket-button" style="border: 1px solid black; border-radius: 25px; padding: 3px 15px; font-size: 20px; color:brown;">+</button>
                         </div>
                     </li>
                     <hr class="w-100" style="border:1px solid brown;">
@@ -77,9 +77,9 @@ $price2 = $result2->fetch_array()[0];
                         <span>
                             <?= $price2; ?> $</span>
                         <div class="ticket-quantity">
-                            <a class="ticket-button bg-secondary" style="border: 1px solid black; border-radius: 25px; padding: 3px 15px ;" href="#">-</a>
+                            <button type="button" class="btn ticket-button" style="border: 1px solid black; border-radius: 25px; padding: 3px 15px; font-size: 20px; color:brown;">-</button>
                             <input type="text" class="quntity-input" id="kid" style="width: 40px; text-align: center;" value="0">
-                            <a class="ticket-button bg-secondary" style="border: 1px solid black; border-radius: 25px; padding: 3px 15px ;" href="#">+</a>
+                            <button type="button" class="btn ticket-button" style="border: 1px solid black; border-radius: 25px; padding: 3px 15px; font-size: 20px; color:brown;">+</button>
                         </div>
                     </li>
                 </ul>

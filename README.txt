@@ -1,19 +1,17 @@
 File này để UPDATE workflow và ghi nhớ cách dùng GIT:
 
 UPDATE:
+7/10:Mấy anh ai clone về thì css sai sai thì chuyển qua style1.css xài thử nhé nhé. Máy em hay bị conflic chổ 
+css bên style.css
+
 6/10: Event: thêm ngày gần nhất, limit 3 event trên index
 		index: sửa lại background, footer
-
 4/10: -Admin thì mỏi phần việc thêm breadcrumb, dọn lại index
 		- Trang index.php của USER thì require đến các trang của mọi người
 		- footer, conatact, ticket Binh làm
 		_ event anh Thành là 
 		_ gallery anh Hưng làm 
 		- Animal, category anh Điện làm 
-
-
-
-
 30/9: 
 		- Bình: Xong login/logout/changepass, chưa xong trả lời user feedback + ticket
 
@@ -21,12 +19,7 @@ UPDATE:
 				_Đã đưa GeoLocation API vào trang user 
 		- Điện _ Sửa href trong index.php: dien.php --> index.php?page=dien
 			Xong file thêm xóa sửa Admin_animals.
-
-
-
 **TO-DO:
-
-
 
 
 

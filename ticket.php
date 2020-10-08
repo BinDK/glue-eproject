@@ -6,51 +6,116 @@ $price1 = $result1->fetch_array()[0];
 $price2 = $result2->fetch_array()[0];
  ?>
 <link rel="stylesheet" href="bootstrap.min.css">
-<script src="admin/js/jquery-3.5.1.js"></script>
+<script src="admin/js/jquery-3.5.1.min.js"></script>
+<script src="admin/js/bootstrap.min.js"></script>
 <div class="w3-container w3-padding-32" id="ticket">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Ticket</h3>
 </div>
-  <div class="w3-row-padding w3-grayscale">
-      <form action="">
-<div class="row">
-<div class="col-md-6 col-sm-12">
-<div class="number-tickets-block disable">
-<div class="number-tickets-block number-tickets-block--ticketing residents-only">
-<div class="number-tickets-block number-tickets-block--ticketing residents-only">
-</div>
-</div>
-</div>
-</div>
-<!-- Co -->
-<div class="col-md-6 col-sm-12">
-<div class="number-tickets-block">
-<h2 class="title-1">Choose your Tickets</h2>
-<ul class="list-tickets">
-<li class="ticket-row ticket-row--no-padding" data-ticket-type="nrTKWEBTRFLEX195AD" data-ticket-price="$32.40">
-<div class="ticket-decription">
-<p class="main-text"><span>Adult</span><span>
-<sup>from S$</sup><?= $price1 ?></span></p>
-<p> &nbsp;</p>
-</div>
-<div class="ticket-amount" data-validate=""><span class="fa fa-minus disable" data-minus=""></span>
-<input name="834_4_1152_32.40_tourist_TKWEBTRFLEX195AD_36.00" class="input-form" type="tel" value="0" min="0" max="4" data-analytics-prod-name="River Safari Admission" data-analytics-prod-group="Single Park" data-analytics-prod-add-type="nradult" data-number-ticket=""><span class="fa fa-plus" data-plus=""></span>
-</div>
-</li>
-<li class="ticket-row ticket-row--no-padding" data-ticket-type="nrTKWEBTRFLEX195CH" data-ticket-price="$21.60">
-<div class="ticket-decription">
-<p class="main-text"><span>Child</span><span>
-<sup>from S$</sup><?= $price1 ?></span></p>
-<p>Ages 3 to 12 &nbsp;</p>
-</div>
-<div class="ticket-amount" data-validate=""><span class="fa fa-minus disable" data-minus=""></span>
-<input name="835_4_1153_21.60_tourist_TKWEBTRFLEX195CH_24.00" class="input-form" type="tel" value="0" min="0" max="4" data-analytics-prod-name="River Safari Admission" data-analytics-prod-group="Single Park" data-analytics-prod-add-type="nrchild" data-number-ticket=""><span class="fa fa-plus" data-plus=""></span>
-</div>
-</li>
-</ul>
+
+  <!-- The Modal -->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content m-auto" style="width: 700px;">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <span>Kết quả show ở đây, modal ra giữa, thêm js, background của ticket khác </span>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
 </div>
 
+ 
+<div class="container" id="ticketForm" style="padding: 0 100px;background-image: url('img/h1.gif');">
+    <form action="">
+        <div class="row">
+            <!-- Col left -->
+            <div class="col-md-5 col-sm-12">
+                    <div class="p-2 bg-danger">
+                        <div class="form-group">
+                            <label for="uName">Your Name</label>
+                            <input type="text" class="form-control" id="uName">
+                        </div>
+                        <div class="form-group">
+                            <label for="uPhone">Your Phone</label>
+                            <input type="text" class="form-control" id="uPhone">
+                        </div>
+                    </div>
+                    <!-- <div class="number-tickets-block number-tickets-block--ticketing residents-only"> -->
+                    <!-- </div> -->
+            </div>
+            <!-- Col right -->
+            <div class="col-md-5 col-sm-12">
+                <ul class="list-group list-unstyled border p-3 bg-light">
+                    <li class=" d-flex justify-content-between">
+                        <div>
+                            <h5>Adult</h5>
+                            <small class="text-muted">including 15% VAT</small>
+                        </div>
+                        <span>
+                            <?= $price1; ?> $</span>
+                        <div class="ticket-quantity">
+                            <a class="ticket-button bg-secondary" style="border: 1px solid black; border-radius: 25px; padding: 3px 15px ;" href="#">-</a>
+                            <input type="text" class="quntity-input" id="adult" style="width: 40px; text-align: center;" value="0">
+                            <a class="ticket-button bg-secondary" style="border: 1px solid black; border-radius: 25px; padding: 3px 15px ;" href="#">+</a>
+                        </div>
+                    </li>
+                    <hr class="w-100" style="border:1px solid brown;">
+                    <li class=" d-flex justify-content-between">
+                        <div>
+                            <h5>Kid</h5>
+                            <small class="text-muted">including 15% VAT.<br> Kid under 3 year is FREE</small>
+                        </div>
+                        <span>
+                            <?= $price2; ?> $</span>
+                        <div class="ticket-quantity">
+                            <a class="ticket-button bg-secondary" style="border: 1px solid black; border-radius: 25px; padding: 3px 15px ;" href="#">-</a>
+                            <input type="text" class="quntity-input" id="kid" style="width: 40px; text-align: center;" value="0">
+                            <a class="ticket-button bg-secondary" style="border: 1px solid black; border-radius: 25px; padding: 3px 15px ;" href="#">+</a>
+                        </div>
+                    </li>
+                </ul>
+                 <button type="button" class="btn btn-primary float-right mt-3" id="myBtn">Open Modal</button>
+
+            </div>
+        </div>
+    </form>
 </div>
-</div>
-</form>
-  </div>
+
+
+
+<script>
+	$(".ticket-button").on("click", function () {
+
+    var $button = $(this);
+    var oldValue = $button.closest('.ticket-quantity').find("input.quntity-input").val();
+
+    if ($button.text() == "+") {
+        var newVal = parseFloat(oldValue) + 1;
+    } else {
+        // Don't allow decrementing below zero
+        if (oldValue > 0) {
+            var newVal = parseFloat(oldValue) - 1;
+        } else {
+            newVal = 0;
+        }
+    }
+
+    $button.closest('.ticket-quantity').find("input.quntity-input").val(newVal);
+
+});
+	$(document).ready(function(){
+  $("#myBtn").click(function(){
+    $("#myModal").modal();
+  });
+});
+</script>
     

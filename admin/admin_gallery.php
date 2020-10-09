@@ -1,55 +1,97 @@
 <?php
 require_once 'connect.php';
-if(isset($_POST['buttonAdd'])){
+if (isset($_POST['buttonAdd'])) {
     $name = $_POST['name'];
     $description = $_POST['description'];
+    $shortDescription = $_POST['shortDescription'];
+    $date = date('ymdHis');
     // upload file
-    foreach($_FILES['photo']['name'] as $key => $value){
-        $fileName = date('ymdHis').$value;
-        copy($_FILES['photo']['tmp_name'][$key],'../img/galleryUpload/'.$fileName);
-        mysqli_query($con,'insert into db_gallary (name,description,fileAddress) values("'.$name.'","'.$description.'","'.$fileName.'")');
-    }; 
-    
+    $photoArray = [];
+    foreach ($_FILES['photo']['name'] as $key => $value) {
+        $fileName = date('ymdHis') . $value;
+        copy($_FILES['photo']['tmp_name'][$key], '../img/galleryUpload/' . $fileName);
+        $photoArray[$key] = $fileName;
+    };
+    $photoName = join('-', $photoArray);
+    mysqli_query($con, 'insert into db_gallary (name,description,fileAddress,shortDescription,date) values("' . $name . '","' . $description . '","' . $photoName . '","' . $shortDescription . '","' . $date . '")');
 }
+if (isset($_GET['action'])) {
+    if ($_GET['action'] == 'delete') {
+        $id = $_GET['deleteId'];
+        mysqli_query($con, 'delete from db_gallary where id = ' . $id);
+    };
+};
 $result = mysqli_query($con, 'select * from db_gallary');
 ?>
+
+<!-- View -->
+
 <h1 class="mt-4">Gallery</h1>
- <ol class="breadcrumb mb-4">
-<li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-<li class="breadcrumb-item active">Gallery</li>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+    <li class="breadcrumb-item active">Gallery</li>
 </ol>
 <form method="post" style="width:300px" enctype="multipart/form-data">
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" name="name">
-  </div>
-  <div class="form-group">
-    <label for="description">Description:</label>
-    <textarea name="description" cols="20" rows="5"></textarea>
-  </div>
-  <div class="form-group">
-    <label for="file">File</label>
-    <input type="file" name="photo[]" multiple="true">
-  </div>
-  <input type="submit" name="buttonAdd" value="Add" id="created" class="btn btn-primary">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name">
+    </div>
+    <div class="form-group">
+        <label for="shortDescription">Short Description:</label>
+        <textarea name="shortDescription" cols="20" rows="5"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea name="description" cols="100" rows="5"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="file">File</label>
+        <input type="file" name="photo[]" multiple="true">
+    </div>
+    <input type="submit" name="buttonAdd" value="Add" id="created" class="btn btn-primary">
 </form>
 
-<table class="table table-bordered">
-    <tr style="text-align:center">
-        <td ><b>Name</b></td>
-        <td><b>Img</b></td>
-        <td><b>Description</b></td>
-    </tr>
-    <?php while ($gallery = mysqli_fetch_array($result)) {?>
+<table id="example" class="table table-striped table-bordered" style="width:100%">
+    <thead>
         <tr>
-            <td style="width:100px"><?= $gallery['name'] ?></td>
-            <td><img src="../img/galleryUpload/<?=$gallery['fileAddress']?>" width="100px"></td>
-            <td><?= $gallery['description'] ?></td>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Short Description</th>
+            <th>Date</th>
+            <th>Action</th>
         </tr>
-    <?php } ?>
+    </thead>
+    <tbody>
+        <?php while ($gallery = mysqli_fetch_array($result)) { ?>
+            <tr align="center">
+                <td style="width:100px;vertical-align: middle;"><?= $gallery['name'] ?></td>
+                <!-- showing photoArray -->
+                <td>
+                    <?php
+                    $photo = explode('-', $gallery['fileAddress']);
+                    for ($i = 0; $i < count($photo); $i++) { ?>
+                        <img src="../img/galleryUpload/<?= $photo[$i] ?>" width="100px">
+                    <?php }
+                    ?>
+                </td>
+                <td style="width:100px;vertical-align: middle;"><?= $gallery['shortDescription'] ?></td>
+                <td style="width:100px;vertical-align: middle;"><?= $gallery['date'] ?></td>
+                <td align="center" style="vertical-align: middle;">
+                    <a href="index.php?page=admin_gallery_edit&id=<?= $gallery['id'] ?>">Edit</a> |
+                    <a onclick="return confirm('Are you really want to delete it??')" href="index.php?page=admin_gallery&id=viewall&view=1&action=delete&deleteId=<?= $gallery['id'] ?>">Delete</a>
+                </td>
+            </tr>
+        <?php } ?>
+    </tbody>
 </table>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    });
+</script>

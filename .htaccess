@@ -1,0 +1,2 @@
+ RewriteEngine On
+ ErrorDocument 404 /zoo/404.php

@@ -25,7 +25,7 @@ $result = mysqli_query($con, 'select * from db_gallary limit ' . $item_perpage .
 // Gallery Detail
 $input = mysqli_query($con, 'select * from db_gallary where id = ' . $_GET['id']);
 $output = mysqli_fetch_array($input);
-$photoDetail = explode('-', $output['fileAddress']);
+
 ?>
 <?php require_once  'header.php' ?>
 <!-- Gallery view all -->
@@ -40,7 +40,7 @@ if ($_GET['id'] === "viewall") { ?>
                     ?>
                     <img src="./img/galleryUpload/<?= $photo_view_all[0] ?>" width="250px">
                     <h3><?= $gallery_view_all['name'] ?></h3>
-                    <p><?= $gallery_view_all['description'] ?></p>
+                    <p><?= $gallery_view_all['shortDescription'] ?></p>
                     <p><a class="w3-button w3-light-grey w3-block" href="gallery_view.php?id=<?= $gallery_view_all['id'] ?>">Detail</a></p>
                 </div>
             <?php } ?>
@@ -216,6 +216,7 @@ if ($_GET['id'] === "viewall") { ?>
         <div id="slider-wrapper">
             <div class="inner-wrapper">
                 <?php
+                $photoDetail = explode('-', $output['fileAddress']);
                 for ($i = 0; $i < count($photoDetail); $i++) { ?>
                     <input checked type="radio" name="slide" class="control" id="Slide<?= $i + 1 ?>" />
                     <label for="Slide<?= $i + 1 ?>" id="s<?= $i+1 ?>"></label>

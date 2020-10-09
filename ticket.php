@@ -23,7 +23,7 @@ $price2 = $result2->fetch_array()[0];
             </div>
             <!-- Modal body -->
             <div class="modal-body">
-                <span>Kết quả show ở đây, modal ra giữa, thêm js, background của ticket khác </span>
+                <p>Your name is: <span id="uNameResult"></span> and Your phone is: <span id="uPhoneResult"></span>. You go to our zoo with <span id="ticketAdult"></span> Adult and <span id="ticketKid"></span> Kid. Total is: <span id="total"></span> USD</p>
             </div>
             <!-- Modal footer -->
             <div class="modal-footer">
@@ -89,33 +89,37 @@ $price2 = $result2->fetch_array()[0];
         </div>
     </form>
 </div>
-
-
-
 <script>
-	$(".ticket-button").on("click", function () {
+	$(document).ready(function() {
+	    $("#myBtn").click(function() {
+	        $('#uNameResult').html($('#uName').val());
+	        $('#uPhoneResult').html($('#uPhone').val());
+	        var adult = $('input#adult').val();
+	        $('#ticketAdult').html(adult);
 
-    var $button = $(this);
-    var oldValue = $button.closest('.ticket-quantity').find("input.quntity-input").val();
+	        var kid = $('input#kid').val();
+	        $('#ticketKid').html(kid);
 
-    if ($button.text() == "+") {
-        var newVal = parseFloat(oldValue) + 1;
-    } else {
-        // Don't allow decrementing below zero
-        if (oldValue > 0) {
-            var newVal = parseFloat(oldValue) - 1;
-        } else {
-            newVal = 0;
-        }
-    }
-
-    $button.closest('.ticket-quantity').find("input.quntity-input").val(newVal);
-
-});
-	$(document).ready(function(){
-  $("#myBtn").click(function(){
-    $("#myModal").modal();
-  });
-});
+	        var total = (adult * 120) + (kid * 90);
+	        $('#total').html(total);
+	        $("#myModal").modal();
+	    });
+	    // Plus and Minus btn
+	    $(".ticket-button").on("click", function() {
+	        var $button = $(this);
+	        var oldValue = $button.closest('.ticket-quantity').find("input.quntity-input").val();
+	        if ($button.text() == "+") {
+	            var newVal = parseFloat(oldValue) + 1;
+	        } else {
+	            // Don't allow decrementing below zero
+	            if (oldValue > 0) {
+	                var newVal = parseFloat(oldValue) - 1;
+	            } else {
+	                newVal = 0;
+	            }
+	        }
+	        $button.closest('.ticket-quantity').find("input.quntity-input").val(newVal);
+	    });
+	});
 </script>
     

@@ -19,21 +19,23 @@ $page = [];
 for ($i = 0; $i < $no_of_pages; $i++) {
     $page[$i] = $i + 1;
 }
-$startItem = ($_GET['view'] - 1) * $item_perpage;
-$result = mysqli_query($con, 'select * from db_gallary limit ' . $item_perpage . ' offset ' . $startItem);
+
 
 // Gallery Detail
-$input = mysqli_query($con, 'select * from db_gallary where id = ' . $_GET['id']);
-$output = mysqli_fetch_array($input);
+
 
 ?>
 <?php require_once  'header.php' ?>
+<br>
 <!-- Gallery view all -->
 <?php
 if ($_GET['id'] === "viewall") { ?>
     <div class="container">
         <div class="row-event" align="center">
-            <?php while ($gallery_view_all = mysqli_fetch_array($result)) { ?>
+            <?php 
+            $startItem = ($_GET['view'] - 1) * $item_perpage;
+            $result = mysqli_query($con, 'select * from db_gallary limit ' . $item_perpage . ' offset ' . $startItem);
+            while ($gallery_view_all = mysqli_fetch_array($result)) { ?>
                 <div class="col-3" style="max-width:320px">
                     <?php
                         $photo_view_all = explode('-', $gallery_view_all['fileAddress']);
@@ -216,6 +218,8 @@ if ($_GET['id'] === "viewall") { ?>
         <div id="slider-wrapper">
             <div class="inner-wrapper">
                 <?php
+                $input = mysqli_query($con, 'select * from db_gallary where id = ' . $_GET['id']);
+                $output = mysqli_fetch_array($input);
                 $photoDetail = explode('-', $output['fileAddress']);
                 for ($i = 0; $i < count($photoDetail); $i++) { ?>
                     <input checked type="radio" name="slide" class="control" id="Slide<?= $i + 1 ?>" />

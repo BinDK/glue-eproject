@@ -9,23 +9,73 @@ $phone = $_POST['phone'];
 $text = $_POST['text'];
 
 mysqli_query($con,'INSERT INTO db_feedback (user_name,user_email,user_phone,user_text) VALUES ("'.$name.'", "'.$email.'", "'.$phone.'", "'.$text.'") ');
-
 }
-
-
-
- ?>
-
-  <div class="w3-container w3-padding-32" id="contact">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
-    <p>Lets get in touch and talk about your next project.</p>
-    <form method="post">
-      <input class="w3-input w3-border" type="text" placeholder="Name" required name="name">
-      <input class="w3-input w3-section w3-border" type="Email" placeholder="Email" required name="email">
-      <input class="w3-input w3-section w3-border" type="text" placeholder="Phone" required name="phone">
-      <input class="w3-input w3-section w3-border" type="text" placeholder="Text" required name="text">
-      <button class="w3-button w3-black w3-section" type="submit" name="addFeedback">
-        <i class="fa fa-paper-plane"></i> SEND MESSAGE
-      </button>
-    </form>
-  </div>
+?>
+<div class=" pb-1 pt-5" style="width: 100%;">
+<div class="card" style="padding:50px 100px;">
+    <div class="row no-gutters">
+        <div class="card-header" style="background: url('img/contact.jpg') top left/cover no-repeat;display: table-cell; width: 31%;">
+        </div>
+            <div class="card-body m-5">
+              <h3>We're very appreciate your feedback :)</h3>
+                <form method="POST" onload="return false;">
+                    <div class="input-group">
+                        <input class="input--style-2" type="text" placeholder="Name" name="name">
+                        <span class="border"></span>
+                    </div>
+                    <div class="input-group">
+                        <input class="input--style-2" type="text" placeholder="Phone" name="phone">
+                        <span class="border"></span>
+                    </div>
+                    <div class="input-group">
+                        <input class="input--style-2" type="text" placeholder="Email" name="email">
+                        <span class="border"></span>
+                    </div>
+                    <div class="input-group">
+                        <input class="input--style-2" type="text" placeholder="Your message here!" name="text">
+                        <span class="border"></span>
+                    </div>
+                    <div class="pt-3">
+                        <button class="btn btn-success" type="submit" name="addFeedback"><i class="fa fa-paper-plane"></i> Send Message</button>
+                    </div>
+                </form>
+          </div>
+       </div>
+   </div>
+</div>
+<style type="text/css">
+ .input-group {
+ position: relative;
+ margin-bottom: 32px;
+ border-bottom: 1px solid #e5e5e5;
+ }
+ .input--style-2 {
+ padding: 9px 0;
+ color: #fa4251;
+ font-size: 16px;
+ font-weight: 500;
+ }
+ input{
+ outline: none;
+ margin: 0;
+ border: none;
+ -webkit-box-shadow: none;
+ -moz-box-shadow: none;
+ box-shadow: none;
+ width: 100%;
+ font-size: 14px;
+ font-family: inherit;
+ }
+ .input--style-2 ~ .border {
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ width: 0;
+ height: 1px;
+ }
+ .input--style-2:focus ~ .border{
+ width: 100%;
+ transition: 0.5s;
+ border-color: #FC9CA4 !important;
+ }
+</style>

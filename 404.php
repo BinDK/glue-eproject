@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="style.css">
 	<style>
 		body{
-			background: url('../KTPHP/neon_inkscape.svg') ;
+			/* background: url('../KTPHP/neon_inkscape.svg') ; */
 		}
 		h1{
 			position: absolute;
@@ -35,7 +35,20 @@
 	</style>
 </head>
 <body>
-	<?php require_once 'header.php'; ?>
+	<nav class="navbar navbar-expand navbar-expand-md navbar-dark bg-dark pb-1 d-flex justify-content-between">
+  <div class="navbar-brand ">
+    <b>ZOO</b> <a href="./" class="text text-muted text-decoration-none"><span style="letter-spacing: 4px;">CLEVELAND METROPARKS</span></a>
+    </div>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="nav-item text-white">
+      <a href="#animals" class="btn btn-lg text-muted">Animals</a>
+      <a href="#about" class="btn btn-lg text-muted">About us</a>
+      <a href="#event" class="btn btn-lg text-muted">Events</a>
+      <a href="#ticket" class="btn btn-lg text-muted">Ticket</a>
+      <a href="#gallery" class="btn btn-lg text-muted">Gallery</a>
+      <a href="#contact" class="btn btn-lg text-muted">Contact</a>
+    </div>
+</nav>
 	<h1>Đang suy nghĩ thêm..........</h1>
 </body>
 </html>

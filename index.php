@@ -15,7 +15,7 @@
 <!-- Header -->
   <?php require_once 'header.php'; ?>
 <!-- Page content -->
-<div class="w3-content w3-padding" style="max-width:1564px">
+<div class="container-fluid">
 
   <!-- Animal Section -->
   <?php require_once isset($_GET['page']) ? $_GET['page'].'.php' : 'animal.php'; ?>
@@ -33,12 +33,12 @@
 <?php require_once isset($_GET['page']) ? $_GET['page'].'.php' : 'ticket.php'; ?>
 
   <!-- Contact Section -->
+</div>
 
 <?php require_once isset($_GET['page']) ? $_GET['page'].'.php' : 'contact.php'; ?>
 <!-- End page content -->
 
 <!-- Footer -->
-</div>
 <?php require_once 'footer.php'; ?>
 </body>
 </html>

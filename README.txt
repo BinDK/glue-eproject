@@ -1,6 +1,12 @@
 File này để UPDATE workflow và ghi nhớ cách dùng GIT:
 
-UPDATE:
+*TO-DO:
+
+
+
+**UPDATE:
+10/10: feedback(chưa có alert) + header có bootstrap, header.php đổi navbar thêm carousel 3 hình thú.
+
 7/10:Mấy anh ai clone về thì css sai sai thì chuyển qua style1.css xài thử nhé nhé. Máy em hay bị conflic chổ 
 css bên style.css
 
@@ -19,7 +25,6 @@ css bên style.css
 				_Đã đưa GeoLocation API vào trang user 
 		- Điện _ Sửa href trong index.php: dien.php --> index.php?page=dien
 			Xong file thêm xóa sửa Admin_animals.
-**TO-DO:
 
 
 

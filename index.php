@@ -18,7 +18,7 @@
 <div class="container-fluid">
 
   <!-- Animal Section -->
-  <?php require_once isset($_GET['page']) ? $_GET['page'].'.php' : 'animal.php'; ?>
+<iframe src="animal.php" frameborder="0" width="100%" height="800px"></iframe>
 
 <!-- Gallery Section -->
   <?php require_once isset($_GET['page']) ? $_GET['page'].'.php' : 'gallery.php'; ?>

@@ -25,7 +25,7 @@
           <img src="./img/galleryUpload/<?= $photo[0] ?>" width="100%" height="300px">
           <!-- <img src="./img/galleryUpload/<?= $gallery['fileAddress'] ?>" style="width:250px"> -->
           <h3><?= $gallery['name'] ?></h3>
-          <p><?= $gallery['description'] ?></p>
+          <p><?= $gallery['shortDescription'] ?></p>
           <p><a class="w3-button w3-light-grey w3-block" href="gallery_view.php?id=<?= $gallery['id'] ?>">Detail</a></p>
         </div>
       <?php } ?>

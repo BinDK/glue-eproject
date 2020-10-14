@@ -3,10 +3,7 @@ require_once 'admin/connect.php';
 $result = mysqli_query($con,'SELECT * FROM db_event where date >= curdate() order by date limit 6');
 
  ?>
-
-<div class="w3-container w3-padding-32" id="event">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Event</h3>
-  </div>
+<?php require_once 'header.php'; ?>
 
   <div class="container">
     <div class="row">
@@ -21,3 +18,4 @@ $result = mysqli_query($con,'SELECT * FROM db_event where date >= curdate() orde
 
   </div>
   </div>
+<?php require_once 'footer.php'; ?>

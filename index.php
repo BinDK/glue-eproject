@@ -3,7 +3,6 @@
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="bootstrap.min.css">
 <script src="admin/js/jquery-3.5.1.min.js"></script>
 <script src="admin/js/bootstrap.min.js"></script>
@@ -15,26 +14,21 @@
 <!-- Header -->
   <?php require_once 'header.php'; ?>
 <!-- Page content -->
-<div class="container-fluid">
 
   <!-- Animal Section -->
-<iframe src="animal.php" frameborder="0" width="100%" height="800px"></iframe>
+<?php require_once isset($_GET['page']) ? $_GET['page'].'.php' : 'animal.php'; ?>
 
 <!-- Gallery Section -->
   <?php require_once isset($_GET['page']) ? $_GET['page'].'.php' : 'gallery.php'; ?>
 
 
 <!-- Event Section -->
-
 <?php require_once isset($_GET['page']) ? $_GET['page'].'.php' : 'event.php'; ?>
 
 <!-- Ticket Section -->
-
 <?php require_once isset($_GET['page']) ? $_GET['page'].'.php' : 'ticket.php'; ?>
 
   <!-- Contact Section -->
-</div>
-
 <?php require_once isset($_GET['page']) ? $_GET['page'].'.php' : 'contact.php'; ?>
 <!-- End page content -->
 

@@ -2,13 +2,11 @@
 require_once 'connect.php';
 $result = mysqli_query($con,'select * from db_ticket');
 
-    if (isset($_GET['action'])) {
+if (isset($_GET['action'])) {
       if ($_GET['action'] == 'deleteTicket') {
         $id = $_GET['id'];
         mysqli_query($con, 'delete from db_ticket where id = '.$id); 
-        header('Location:index.php');
-    } 
-
+        header('Location:index.php?page=admin_ticket');} 
 }
          if (isset($_POST['addTicketButton'])) {
      	$addName =  $_POST['addName'];
@@ -90,18 +88,18 @@ while ($ticket = mysqli_fetch_array($result)) {
 
 				<input type="submit" name="addTicketButton" value="Submit">
 </form>
-
-   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<style>
+.nav-ticket{
+ color: white !important;
+ background-color: #D571B8 !important;
+}
+</style>
   <script>
   	    	  $( function() {
     $( "#created" ).datepicker();
   } );
   </script>
-
 <script>
-
 	function showAdd() {
   var show = document.getElementById("addTicket");
   if (show.style.display === "none") {

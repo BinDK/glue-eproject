@@ -1,36 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link href="style.css" rel="stylesheet" type="text/css">
-</head>
-
-<body>
   <?php
   require_once('./admin/connect.php');
   $result = mysqli_query($con, 'select * from db_gallary limit 4');
   ?>
-  <div class="w3-container w3-padding-32" id="gallery">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"><a href="gallery_view.php?id=viewall&view=1">Gallery</a></h3>
-  </div>
-  <div class="container">
-    <div class="row-event">
+
+
+  <link href="style.css" rel="stylesheet" type="text/css"
+  >
+<div class="container-fluid " style="background-color: rgba(133,240,234,0.2) !important;" id="ticket">
+  <span class="text-nowrap text-left m-0 p-0 " style="font-size: 30px">Gallery</span>
+</div>
+
+
+  <div class="container-fluid" style="background-color: #EAE6E5 !important;height: 550px;">
+  <div class="container " style="max-width: 100%; padding-top: 50px;">
+    <div class="row">
       <?php while ($gallery = mysqli_fetch_array($result)) { ?>
-        <div class="col-3" align="center">
+        <div class="col" align="center">
           <?php
           $photo = explode('-', $gallery['fileAddress']);?>
-          <img src="./img/galleryUpload/<?= $photo[0] ?>" width="100%" height="300px">
-          <!-- <img src="./img/galleryUpload/<?= $gallery['fileAddress'] ?>" style="width:250px"> -->
-          <h3><?= $gallery['name'] ?></h3>
-          <p><?= $gallery['shortDescription'] ?></p>
-          <p><a class="w3-button w3-light-grey w3-block" href="gallery_view.php?id=<?= $gallery['id'] ?>">Detail</a></p>
+          <img src="./img/galleryUpload/<?= $photo[0] ?>"  style="width:340px; height: 300px;">
+          <!-- <img src="./img/galleryUpload/< ?= $gallery['fileAddress'] ?>" style="width:250px"> -->
+          <h4><b><?= $gallery['name'] ?></b></h4>
+          <span style="font-size: 15px;"><b><?= $gallery['shortDescription'] ?></b></span>
+          <p><a class="btn btn-block btn-secondary" href="gallery_view.php?id=<?= $gallery['id'] ?>">Detail</a></p>
         </div>
       <?php } ?>
     </div>
   </div>
+</div>
 </body>
 
 </html>

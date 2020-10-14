@@ -14,7 +14,7 @@ if (isset($_POST['buttonSave'])) {
     if (strlen($_FILES['photo']['name']) > 1) {
         $filename = date('FjYgiais') . '-' . $_FILES['photo']['name'];
         echo 'Filename: ' . $filename;
-        copy($_FILES['photo']['tmp_name'], '../img/' . $filename);
+        copy($_FILES['photo']['tmp_name'], '../img/animalPhoto/' . $filename);
     } else {
         $filename = $output['avatar'];
     };
@@ -41,7 +41,7 @@ $output = mysqli_fetch_array($input);
         <td><?= $output['id'] ?></td>
         <td><?= $output['name'] ?></td>
         <td><?= $output['description'] ?></td>
-        <td><img src="../img/<?= $output['avatar'] ?>" width="50" height="50"></td>
+        <td><img src="../img/animalPhoto/<?= $output['avatar'] ?>" width="100" height="100"></td>
         <td><?= $output['category_id'] ?></td>
         <td></td>
     </tr>
@@ -74,3 +74,9 @@ $output = mysqli_fetch_array($input);
 <div align="center">
 <a href="index.php?page=dien" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">BACK TO DETAIL</a>
 </div>
+<style type="text/css">
+    .nav-animal{
+        color: white !important;
+        background-color: #B32F33 !important;
+    }
+</style>

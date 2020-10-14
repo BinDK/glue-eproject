@@ -11,7 +11,7 @@ $text = $_POST['text'];
 mysqli_query($con,'INSERT INTO db_feedback (user_name,user_email,user_phone,user_text) VALUES ("'.$name.'", "'.$email.'", "'.$phone.'", "'.$text.'") ');
 }
 ?>
-<div class=" pb-1 pt-5" style="width: 100%;">
+<div class=" pb-1 mt-1" style="width: 100%;">
 <div class="card" style="padding:50px 100px;">
     <div class="row no-gutters">
         <div class="card-header" style="background: url('img/contact.jpg') top left/cover no-repeat;display: table-cell; width: 31%;">
@@ -50,7 +50,7 @@ mysqli_query($con,'INSERT INTO db_feedback (user_name,user_email,user_phone,user
  border-bottom: 1px solid #e5e5e5;
  }
  .input--style-2 {
- padding: 9px 0;
+ padding: 5px 0;
  color: #fa4251;
  font-size: 16px;
  font-weight: 500;

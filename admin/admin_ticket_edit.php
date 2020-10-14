@@ -19,7 +19,6 @@ if (isset($_POST['btnChangeTicket'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Admin Change Ticket</title>
         <link href="css/styles.css" rel="stylesheet">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
     </head>
     <body class="bg-primary">
         <div id="layoutAuthentication">
@@ -67,8 +66,10 @@ if (isset($_POST['btnChangeTicket'])) {
                 
             </div>
         </div>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
-
-
+<style>
+.nav-ticket{
+ color: white !important;
+ background-color: #D571B8 !important;
+}
+</style>
 </body></html>

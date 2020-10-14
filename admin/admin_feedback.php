@@ -5,9 +5,9 @@ $result = mysqli_query($con,'select * from db_feedback');
 if (isset($_GET['action'])) {
     if ($_GET['action'] == 'deleteFB') {
         $id = $_GET['id'];
-        mysqli_query($con, 'delete from db_feedback where id = '.$id);
-        header('location:index.php'); 
-    } 
+        mysqli_query($con, 'delete from db_feedback where id = '.$id); 
+        header('Location:index.php');
+    }
 }
  ?>
 <h1 class="mt-4">Dashboard</h1>

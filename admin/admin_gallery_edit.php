@@ -60,3 +60,9 @@ if (isset($_POST['buttonSave'])) {
 <div align="center">
     <a href="index.php?page=admin_gallery&id=viewall&view=1" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">BACK TO DETAIL</a>
 </div>
+<style>
+.nav-gallery{
+ color: white !important;
+ background-color: #2FA9B3 !important;
+}
+</style>

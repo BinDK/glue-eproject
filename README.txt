@@ -5,12 +5,13 @@ File này để UPDATE workflow và ghi nhớ cách dùng GIT:
 		
 
 
-
 **UPDATE:
+14/10: Xong!!! Maybe
+
+
+
+
 11/10: Các đầu mục đã đổ dữ liệu vô xong.
-
-
-
 10/10: feedback(chưa có alert) + header có bootstrap, header.php đổi navbar thêm carousel 3 hình thú.
 7/10:Mấy anh ai clone về thì css sai sai thì chuyển qua style1.css xài thử nhé nhé. Máy em hay bị conflic chổ 
 css bên style.css

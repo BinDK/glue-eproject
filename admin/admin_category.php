@@ -1,43 +1,101 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<?php
+<?php 
 require_once 'connect.php';
-if(isset($_POST['buttonAdd'])){
-	$name = $_POST['species_name'];
-	$description = $_POST['description'];
-	mysqli_query($con,'insert into db_category(species_name,description) values ("'.$name.'","'.$description.'")');
+$result = mysqli_query($con,'select * from db_category');
+
+if (isset($_GET['action'])) {
+    if ($_GET['action'] == 'deleteCate') {
+    $id = $_GET['id'];
+    mysqli_query($con, 'delete from db_category where id = '.$id); 
+    header('Location:index.php?page=admin_category');
+    } 
 }
-$result = mysqli_query($con, 'select * from db_category');
-?>
+         if (isset($_POST['addCateButton'])) {
+     	$species =  $_POST['addSpecies'];
+     	$description = $_POST['addDescription'];
+      mysqli_query($con, 'INSERT INTO db_category (species_name, description) values ("'.$species.'", "'.$description.'")');
+     }
+ ?>
+
 <h1 class="mt-4">Category</h1>
- <ol class="breadcrumb mb-4">
+<ol class="breadcrumb mb-4">
 <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-<li class="breadcrumb-item active">Animal</li>
+<li class="breadcrumb-item active">Category</li>
 </ol>
-<form  method="post" style="width:300px">
-  <div class="form-group">
-    <label for="species_name">Category's name:</label>
-    <input type="text" class="form-control" name="species_name">
-  </div>
-  <div class="form-group">
-    <label for="description">Description:</label>
-    <textarea name="description" cols="20" rows="5"></textarea>
-  </div>
-  <input type="submit" name="buttonAdd" value="Add" id="created" class="btn btn-primary">
-</form>
-<table class="table table-bordered" style="width:800px">
-	<tr style="text-align:center">
-		<th>ID</th>
-		<th>Species Name</th>
-		<th>Description</th>
-	</tr>
-	<?php while ($category = mysqli_fetch_array($result)) { ?>
-		<tr>
-			<td><?= $category['id'] ?></td>
-			<td align="center"><?= $category['species_name'] ?></td>
-			<td align="center"><?= $category['description'] ?></td>
-		</tr>
-	<?php } ?>
+  <div class="card mb-4">
+<div class="card-header">
+<i class="fas fa-table mr-1"></i> Category </div>
+<div class="card-body">
+            <div class="table-responsive">
+            <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+
+<div class="row">
+    <div class="col-sm-12">
+<table class="table table-bordered dataTable" id="dataTable" role="grid" aria-describedby="dataTable_info" style="width: 100%;" width="100%" cellspacing="0">
+<thead>
+<tr role="row">
+    <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 100.467px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">ID</th>
+    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 137.733px;" aria-label="Position: activate to sort column ascending">Species Name</th>
+    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 280.55px;" aria-label="Start date: activate to sort column ascending">Desciption</th>
+    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 119.067px;" aria-label="Salary: activate to sort column ascending">Edit</th>
+</tr>
+</thead>
+<tfoot>
+<tr><th rowspan="1" colspan="1">ID</th>
+    <th rowspan="1" colspan="1">Species Name</th>
+    <th rowspan="1" colspan="1">Desrciption</th>
+    <th rowspan="1" colspan="1">Edit</th>
+</tr>
+</tfoot>
+    <tbody>
+<?php 
+$odd = 'odd';
+$even = 'even';
+while ($cate = mysqli_fetch_array($result)) { 
+    $i = 0;
+    $even_odd = ($i/2==0) ? $odd : $even;
+    ?>
+            <tr role="row" class="<?= $even_odd ?>">
+                <td><?= $cate['id'] ?></td>
+                <td><?= $cate['species_name'] ?></td>
+                <td><?= $cate['description'] ?></td>
+                <td align="center"><a href="index.php?page=admin_category_edit&id=<?= $cate['id']; ?>">Edit</a> |
+                <a onclick="return confirm('Are you really want to delete it??')" href="index.php?page=admin_category&id=<?= $cate['id']?>&action=deleteCate">Delete</a>
+                </td>
+            </tr>
+    <?php } ?>
+</tbody>
 </table>
+</div>
+</div>
+
+    </div>
+    </div>
+    	<div>
+    		<button onclick="showAdd()" class="btn btn-primary">Add more cate</button>
+    	</div>
+    </div>
+</div>
+
+    <form method="post" id="addForm" style="display:none; margin:10px 50px;" enctype="multipart/form-data">
+    	<h5>Add more Category </h5>
+			<input type="text" name="addSpecies" placeholder="Enter Title">
+			<input type="text" name="addDescription" placeholder="Enter Description ">
+			<input type="submit" name="addCateButton" value="Submit">
+</form>
+<script>
+
+	function showAdd() {
+  var show = document.getElementById("addForm");
+  if (show.style.display === "none") {
+    show.style.display = "block";
+  } else {
+    show.style.display = "none";
+  }
+}
+</script>
+<style type="text/css">
+	.nav-cate{
+		color: white !important;
+		background-color: #2FB36A !important;
+	}
+</style>

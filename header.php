@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand navbar-expand-md navbar-dark bg-dark pb-1 d-flex justify-content-between">
   <div class="navbar-brand ">
-    <b>ZOO</b> <a href="./" class="text text-muted text-decoration-none"><span style="letter-spacing: 4px;">CLEVELAND METROPARKS</span></a>
+    <a href="./" class="text text-muted text-decoration-none"><span style="letter-spacing: 4px;">SINGAPORE ZOO</span> </a>
     </div>
     <!-- Float links to the right. Hide them on small screens -->
     <div class="nav-item text-white">
@@ -12,10 +12,8 @@
       <a href="#contact" class="btn btn-lg text-muted">Contact</a>
     </div>
 </nav>
+<!-- Slideshow - Carousel -->
 
-<!-- <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home"> -->
-  <!-- <img class="w3-image" src="./img/avatar1.jpg" alt="Architecture" width="1500" height="500"> -->
-<!-- </header> -->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -24,13 +22,13 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="img/avatar1.jpg" class="d-block w-100" height="700" alt="Ask the dev for picture">
+      <img src="img/avatar1.jpg" class="d-block w-100" height="600" alt="Ask the dev for picture">
     </div>
     <div class="carousel-item">
-      <img src="img/tiger1.jpg" class="d-block w-100" height="700" alt="Ask the dev for picture">
+      <img src="img/avatar5.jpg" class="d-block w-100" height="600" alt="Ask the dev for picture">
     </div>
     <div class="carousel-item">
-      <img src="img/tiger1.jpg" class="d-block w-100" height="700" alt="Ask the dev for picture">
+      <img src="img/avatar6.jpg" class="d-block w-100" height="600" alt="Ask the dev for picture">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

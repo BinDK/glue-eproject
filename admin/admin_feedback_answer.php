@@ -7,6 +7,7 @@ if (isset($_POST['btnAnswer'])) {
     $id = $_POST['id'];
     $message = $_POST['message'];
         mysqli_query($con,'delete from db_feedback where id = '.$id);
+        header('Location:index.php');
 }
  ?>
 
@@ -52,6 +53,4 @@ if (isset($_POST['btnAnswer'])) {
                 
             </div>
         </div>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
 </body></html>

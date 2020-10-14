@@ -17,14 +17,14 @@ $event = mysqli_fetch_array($result);
 	<link rel="stylesheet" href="bootstrap.min.css"> 
 </head>
 <body>
-<div class="card flex-row m-5" style="height: 300px;">
+<div class="card flex-row m-5 " style="height: 300px; background-color: #ECECEC !important;">
     <div class="card-header border-0"><img width="350" height="275" src="img/eventUpload/<?= $event['event_photo'] ?>" alt=""></div>
     <div class="card-block px-2">  
-    <p class="card-text"><?= $event['detail'] ?></p>
+    <h5 class="card-text pt-2 text-primary"><?= $event['detail'] ?></h5>
   </div>
 </div>
   <div class=" ml-5 mb-5 mt-1">
-    <a class="btn btn-sm btn-success" href="index.php">Go Back</a>
+    <a class="btn btn-lg btn-success" href="index.php">Go Back</a>
   </div>
 
 

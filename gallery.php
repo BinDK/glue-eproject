@@ -12,22 +12,20 @@
 </div>
 
 
-  <div class="container-fluid" style="background-color: #EAE6E5 !important;height: 550px;">
-  <div class="container " style="max-width: 100%; padding-top: 50px;">
+  <div class="container-fluid" style="padding-top: 100px;background-color: #EAE6E5 !important;height: 550px;">
     <div class="row">
       <?php while ($gallery = mysqli_fetch_array($result)) { ?>
-        <div class="col" align="center">
+        <div class="col col-md-3 text-truncate" align="center">
           <?php
           $photo = explode('-', $gallery['fileAddress']);?>
-          <img src="./img/galleryUpload/<?= $photo[0] ?>"  style="width:340px; height: 300px;">
+          <img src="./img/galleryUpload/<?= $photo[0] ?>"  class="img-fluid">
           <!-- <img src="./img/galleryUpload/< ?= $gallery['fileAddress'] ?>" style="width:250px"> -->
-          <h4><b><?= $gallery['name'] ?></b></h4>
+          <h5><b><?= $gallery['name'] ?></b></h5>
           <span style="font-size: 15px;"><b><?= $gallery['shortDescription'] ?></b></span>
-          <p><a class="btn btn-block btn-secondary" href="gallery_view.php?id=<?= $gallery['id'] ?>">Detail</a></p>
+          <p><a class="btn btn- btn-block btn-secondary" href="gallery_view.php?id=<?= $gallery['id'] ?>">Detail</a></p>
         </div>
       <?php } ?>
     </div>
-  </div>
 </div>
 </body>
 

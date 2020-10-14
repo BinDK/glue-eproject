@@ -2,7 +2,7 @@
 <html>
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="bootstrap.min.css">
 <script src="admin/js/jquery-3.5.1.min.js"></script>
 <script src="admin/js/bootstrap.min.js"></script>

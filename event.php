@@ -7,13 +7,12 @@ $result = mysqli_query($con, 'SELECT * FROM db_event where date >= curdate() ord
     <span class="text-nowrap text-left m-0 p-0 " style="font-size: 30px">Event</span>
 </div>
 <div class="container-fluid" style="background: url('img/eventBackground.jpg') no-repeat center center/cover; height: 550px">
-    <div class="container pl-0 pr-0 " style="padding-top: 100px; max-width: 80%;">
-        <div class="row-event">
+        <div class="row m-auto pt-5">
             <?php while ($event = mysqli_fetch_array($result)) { ?>
-            <div class="col">
+            <div class="col col-md-4 col-xl-4">
                 <h3 class="text text-primary text-center" style="color: #9541A3 !important;"><b>
                         <?= $event['title'] ?></b></h3>
-                <div class="hovereffect">
+                <div class="hovereffect pl-5">
                     <img src="img/eventUpload/<?= $event['event_photo'] ?>" alt="John" style="width:400px; height: 290px;">
                     <div class="overlay">
                         <p>
@@ -24,8 +23,8 @@ $result = mysqli_query($con, 'SELECT * FROM db_event where date >= curdate() ord
                 </div>
             </div>
             <?php } ?>
+            <div class="w-100"></div>
         </div>
-    </div>
 </div>
 <style type="text/css">
 .hovereffect {
@@ -43,7 +42,7 @@ $result = mysqli_query($con, 'SELECT * FROM db_event where date >= curdate() ord
     height: 290px;
     position: absolute;
     overflow: hidden;
-    left: 0;
+    left: 48px;
     background-color: rgba(255, 255, 255, 0.7);
     top: -200px;
     opacity: 0;

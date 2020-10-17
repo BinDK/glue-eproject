@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 14, 2020 at 09:08 AM
+-- Generation Time: Oct 17, 2020 at 10:03 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -40,12 +40,33 @@ CREATE TABLE `db_animal` (
 --
 
 INSERT INTO `db_animal` (`id`, `name`, `description`, `avatar`, `category_id`) VALUES
-(0, 'corgi 1', 'pop', 'bird1.jpg', 1),
-(1, 'corgi 2', 'pop', 'bird2.jpg', 1),
-(2, 'corgi 2', 'pop', 'bird3.jpg', 1),
-(3, 'corgi 2', 'pop', 'horse1.jpg', 2),
-(4, 'horse', 'pop', 'horse2.jpg', 2),
-(5, 'corgi 3', 'pop', 'deer.jpg', 3);
+(1, 'Crowned Crane', 'This bird gets its name from the distinctive golden crown of feathers on its head. It lives in open areas and grasslands, where it feeds on grass seeds, insects, frogs and lizards. Crowned cranes usually mate for life. Both the male and female cooper', 'October172020818am1808-African_crowned_crane1.jpg', 1),
+(2, 'Sarus Crane', 'Small families or pairs of sarus cranes live in open landscapes, often in marshy areas or along shores of lakes and ponds. These birds aren\'t picky eaters: they feed on marsh plants, numerous types of aquatic insects, frogs, and even water snakes.', 'October172020820am2020-sarus_crane01.jpg', 1),
+(3, 'White-naped Crane', 'The beauty and grace of these Asian cranes is unforgettable as they bow and leap, engaging in the crane dance. Though the dance is part of their courtship display, at other times it seems to be for just pure joy.', 'October172020821am2134-white_naped_crane1.jpg', 1),
+(4, 'Vladimir Heavy Draft', 'The Vladimir Heavy Draft horse hails from the former Soviet Union. They originated in Vladimir (hence the name) and Ivanovo, villages located north-east of Moscow. Bred originally from imported draft horse stock, Vladimir has named a breed in its own right in 1946. Extremely strong, relatively docile, and fast-maturing, these horses are used both for draft work and for troika sleighs.', 'October172020824am2406-vladimir-heavy-draft-horse-july032020-min.jpg', 2),
+(5, 'Hanoverian', 'This German horse traces its bloodlines back to the Middle Ages. Originally used as a warhorse, the Hanoverian was later crossbred with horses from Spain and Asia to create a horse suited for the cavalry. The breed took off in 1735 when King George II (King of England but a German nonetheless) created his famous stud and training facility (still in existence today).', 'October172020824am2454-hanoverian-horse-july032020-min.jpg', 2),
+(6, 'Akhal-Teke', 'Akhal-Tekes are believed to have been around for over 3,000 years. They come from Turkmenistan in Northern Iran and history suggests they were originally bred by Turkoman tribes. They have historically been used by cavalry members and racehorses. Akhal-Tekes are famous for their stamina, courage, and ability to exist in barren and arid environments.', 'October172020825am2524-akhal-teke-horse-july032020-min.jpg', 2),
+(7, 'Whitetail Deer', 'Whitetail deer are a widely distributed species of deer native to the Americas. Their range extends from Canada to as far south as the Peruvian Andes mountains, though their numbers are the highest in the United States east of the Rocky Mountains. They are the most populous deer species in North America.', 'October172020826am2632-white-tailed-deer.jpg', 3),
+(8, 'Mule Deer', 'Mule deer are a medium-sized species of deer closely related to the whitetails. Whereas whitetails dominate the deciduous forests and grasslands of the eastern United States, mule deer find their home in the coniferous forests of the Rocky Mountains, reaching as far north as Alaska. ', 'October172020827am2705-mule-deer.jpg', 3),
+(9, 'Axis Deer', 'Like the whitetail and mule deer, the axis deer is a medium-sized deer species. The upward weight range is 100 pounds for females and 165 pounds for males, though bucks weighing up to 250 pounds have been recorded. ', 'October172020827am2740-axis-deer.jpg', 3),
+(10, 'The Southeast African Cheetah', 'The Southeast African cheetah, located in countries like Namibia (where the species is most common), Botswana, South Africa, Kenya and Tanzania.', 'October172020829am2911-main-qimg-b517ff92d9a57829d0150390a002cd9d.jpg', 4),
+(11, 'The Northeast African Cheetah', 'The Northeast African cheetah, located in South Sudan, Ethiopia and Eritrea.', 'October172020829am2952-main-qimg-c72cd21c679ddc7e19ab063b6366691c.jpg', 4),
+(12, 'The rare Northwest African cheetah', 'The rare Northwest African cheetah (also called Saharan cheetah), located in desert countries like Algeria and Burkina Faso.', 'October172020830am3018-main-qimg-ef36ea74f650f0b15aeddf7d85a69ff7.jpg', 4),
+(13, 'Black Caiman', 'The black caiman resides in northern South America and can be found over much of the Amazon River basin from Peru and Ecuador eastward to Guyana and Suriname.', 'October172020831am3114-Black-caiman.jpg', 5),
+(14, 'Mugger Crocodile', 'The mugger, or marsh, crocodile can be found in freshwater pools, wetlands, lakes, and slow-moving streams from Iran to the western fringes of Southeast Asia. It is easily recognized by its wide flat snout.', 'October172020831am3143-Mugger-marsh-crocodile.jpg', 5),
+(15, 'American Crocodile', 'The American crocodile, also called the Central American alligator, inhabits a wide range of aquatic habitats from southern Florida and Mexico south through the Caribbean islands and Central America to northern South America. ', 'October172020832am3211-American-crocodile.jpg', 5),
+(16, 'The Asian elephant', 'The Asian elephant (Elephas maximus) weighs about 5,500 kg and has a shoulder height of up to 3.5 metres. The Asian elephant includes three subspecies: the Indian, or mainland (E. maximus indicus), the Sumatran (E. maximus sumatranus), and the Sri Lankan (E. maximus maximus). African elephants have much larger ears, which are used to dissipate body heat.', 'October172020833am3337-Asian-elephant.jpg', 6),
+(17, 'African savanna elephant', 'The trunk, or proboscis, of the elephant is one of the most versatile organs to have evolved among mammals. This structure is unique to members of the order Proboscidea, which includes the extinct mastodons and mammoths. Anatomically, the trunk is a combination of the upper lip and nose; the nostrils are located at the tip. ', 'October172020834am3417-African-savanna-elephant.jpg', 6),
+(18, 'Barbary Lion', 'The barbary lions (Panthera leo leo) is also known as the North African lion. This lion subspecies previously occurred in Egypt, Tunisia, Morocco, and Algeria. Currently, it is extinct in the wild due to indiscriminate hunting. The last known wild Barbary lion was killed in 1920 in Morocco. Today, some lions kept in captivity are believed to be descendants of the wild Barbary lions, especially those residing in the Rabat Zoo. The Barbary lion is one of the largest subspecies of lion and individuals with lengths ranging between 9.8 feet and 10.8 feet, and weights of over 200 kg have been previously reported.', 'October172020835am3510-shutterstock-1047598105.jpg', 7),
+(19, 'West African Lion', 'The critically endangered West African lion or the Senegal lion (Panthera leo senegalensis) inhabits western Africa from the Central African Republic to Senegal. The West African lion is the smallest among the sub-Saharan African lions. Only about 1,800 individuals remain as small and fragmented populations in West Africa.', 'October172020836am3605-how_many_types_of_lions_are_there_3294_600.jpg', 7),
+(20, 'A black English Magpie pigeon', 'An English Magpie at the Queensland State Show. This pigeon is owned by John Thomas.', 'October172020837am3753-Magpie_pigeon.jpg', 8),
+(21, 'British Show Racer', 'This file contains additional information such as Exif metadata which may have been added by the digital camera, scanner, or software program used to create or digitize it. If the file has been modified from its original state, some details such as the timestamp may not fully reflect those of the original file. The timestamp is only as accurate as the clock in the camera, and it may be completely wrong.', 'October172020838am3854-150px-British_Show_Racer.jpg', 1),
+(22, 'Spider Monkey', 'There are 7 known sub species of the Spider Monkey. They belong to the class of New World Monkeys. They are believed to be the biggest of all the different Monkeys in that particular class.', 'October172020839am3949-spider_monkey.jpg', 9),
+(23, 'Squirrel Monkey', 'The Common Squirrel Monkey is one that gets its name for looking very similar to the Squirrel. They are part of the New World Monkeys. The tropical regions of South America is where you will find the Common Squirrel Monkey.', 'October172020840am4017-squirrel_monkey_species.jpg', 9),
+(24, 'Vervet Monkey', 'The Vervet Monkey is an Old World classification. There are 5 known subspecies that have been identified. They have a very unique appearance to them which helps them to be separated from other types of Monkeys found in the world.', 'October172020840am4045-vervet_specie.jpg', 9),
+(25, 'Monkey Species', 'There are more than 260 species of Monkeys found in the world today. They are derived from early primates that have been around for millions of years. There isn’t enough information about evolution to say with certainty how they came to be.', 'October172020841am4109-types_of_monkeys.jpg', 9),
+(26, 'Polar Bear', 'Polar bears are classified as marine mammals. They are also the largest carnivorous land mammals on Earth. They spend most of their lives on the sea ice of the Arctic Ocean. The skin under the polar bear\'s fur is actually black; this black is evident only on the nose. They are about seven to eight feet long, measured from the nose to the tip of their very short tail. Male polar bears are much larger than the females. ', 'October172020841am4149-polar-bear-1.jpg', 10),
+(27, 'Grizzly Bear', 'The grizzly bear is a North American subspecies of the brown bear. Grizzlies are typically brown, though their fur can appear to be white-tipped, or grizzled, lending them their name. Grizzly bears are protected by law in the continental United States—not in Alaska—though there have been some controversial attempts to remove those protections in recent years.', 'October172020842am4216-a6fd9ac3-gb.jpg', 10);
 
 -- --------------------------------------------------------
 
@@ -66,7 +87,14 @@ CREATE TABLE `db_category` (
 INSERT INTO `db_category` (`id`, `species_name`, `description`) VALUES
 (1, 'Birds', ''),
 (2, 'Horse', ''),
-(3, 'Deer', '');
+(3, 'Deer', ''),
+(4, 'Cheetah', ''),
+(5, 'Crocodile', ''),
+(6, 'Elephant', ''),
+(7, 'Lion', ''),
+(8, 'Penguin', ''),
+(9, 'Monkey', ''),
+(10, 'Bear', '');
 
 -- --------------------------------------------------------
 
@@ -134,6 +162,22 @@ INSERT INTO `db_gallary` (`id`, `name`, `description`, `fileAddress`, `shortDesc
 (6, 'The Southern Ridges', 'For those who want to get away from—and above—the city and a little closer to nature, the Southern Ridges is a great place to explore. As a bonus, you will also get one of the best panoramic views of the city, harbour and the Southern Islands.\r\n\r\nThe Southern Ridges is a ten-kilometre stretch of green open spaces spanning the hills of some of Singapore’s most popular parks and gardens, connected by picturesque ridges and pathways.\r\n\r\nImagine walking across a bridge 36-metres above the road connecting two hilltops. You can perform this exhilarating high-wire act at Henderson Waves, a distinctive wave-like structure consisting of a series of undulating curved \'ribs\', also Singapore’s highest pedestrian bridge.\r\n\r\nThe Southern Ridges is made up of Mount Faber Park, Telok Blangah Hill Park, HortPark, Kent Ridge Park and Labrador Nature Reserve.\r\n\r\nBird-watching enthusiasts will be able to catch their favourite creatures in their natural habitat along these trails, while photographers will never run out of picture opportunities of the beautiful flora and fauna found here.\r\n\r\nvisitsingapore.com/en_ph/see-do-singapore/nature-wildlife/parks-gardens/the-southern-ridges/', '2010110143516.1.jpg', 'Walk amongst the trees at this ten-kilometre stretch of connecting trails, home to diverse flora and', '201011014351'),
 (7, 'A 2-day guide for nature lovers', 'DAY 1: ISLAND LIFE\r\n\r\n1 MacRitchie Nature Trail & Reservoir Park\r\nIn the morning, head over to MacRitchie Reservoir Park, a water catchment area in the heart of Singapore that’s home to lush rainforests. “Rainforests are synonymous to the equator, and the oldest rainforest in this region is here,” Subaraj says with pride.\r\n\r\n“The diversity is amazing. A lot of visitors to Singapore from the West do not have access to rainforests so they may be seeing it for the first time,” says Subaraj. If you’re lucky, you’ll cross paths with long tailed macaque monkeys and flying lemurs.\r\n\r\n\r\n2 Sungei Buloh Wetland Reserve\r\nSpend your afternoon with the birds: Subaraj recommends bird watching at Sungei Buloh Wetland Reserve. We recommend that you spend at least half a day at this ASEAN Heritage site, home to diverse inhabitants such as watersnakes, herons and otters. The wetland reserve is also a stopover point for migratory birds travelling from Siberia to Australia. If you’re visiting in September to March, you might spot the rare Blacktailed Godwit migrating.\r\n\r\n“Sungei Buloh is the last feeding ground on these birds’ migratory route,” Subaraj shares. “Some of these birds travel over twelve thousand kilometres to move between their winter and summer grounds.”\r\n\r\n\r\n3 Singapore Botanic Gardens\r\nSpend your evening relaxing at the Singapore Botanic Gardens. Home to a diverse variety of flora and birds, this UNESCO World Heritage site is located in the heart of Singapore is easily accessible to the public, and its colonial buildings now house top-notch restaurants. Make it a point to visit the Learning Forest, a lush habitat that’s home to some of the tallest tree species in Southeast Asia—Subaraj helped develop this area.\r\n\r\n\r\nDAY 2: A BOAT RIDE AWAY\r\n\r\n4 Pulau Ubin\r\nSubaraj and Pulau Ubin go way back: the eco-conservationist is one of the many nature and heritage enthusiasts that helped save this island—located just off the northeast of Singapore—from being turned into industrial and housing estates. “Pulau Ubin is [like a time capsule] of good old Singapore, as it was 40 years ago,” Subaraj shares. “Nature co-exists with humans here. You’ll find wildlife in the fruit orchards, hornbills in the villages, and grey herons in its quarries.”\r\n\r\nStart off in the wee hours of the morning, as the sun rises. If you’d like to have a quick breakfast, have a plate of nasi lemak (fragrant rice dish cooked in coconut milk and pandan leaf, accompanied by an array of side dishes like omelette, fried fish and anchovies) on the mainland, at Changi Village Food Centre. Once satisfied, hop on a bumboat to this idyllic island that’s synonymous with shrines, swamps, and a variety of flora and fauna. Cycling is a great way to explore the island at your own pace, and bicycle rental is available at the kiosks around the jetty.\r\n\r\n\r\n5 Chek Jawa\r\nOn Pulau Ubin, make your way to its southeastern hook, which is home to the Chek Jawa Wetlands. A confluence of six natural habitats, ranging from rocky beaches to seagrass lagoons, Chek Jawa is a miniature marvel of contrasting ecosystems that’s definitely worth exploring. Subaraj was one of several individuals who highlighted this unique location, but he ultimately credits the public for its preservation. “Lawmakers went to Chek Jawa and saw 700 people watching nature, so they couldn’t deny [its importance],” he recalls.\r\n\r\nTo this day, Chek Jawa remains a favourite spot for student groups, nature lovers and photographers looking to escape the city bustle.', '2010110146047.1.jpg-2010110146047.2.jpg-2010110146047.3.jpg-2010110146047.4.jpg-2010110146047.5.jpg', 'Subaraj Rajathurai takes us into the untamed areas of Singapore, to experience the ecosystems that h', '201011014604'),
 (8, 'Singapore\'s iconic green spaces', 'Nature lovers and outdoor enthusiasts, escape from the city and explore Singapore’s green spaces for some tranquillity.\r\n\r\nThere’s a park or garden to explore no matter where you are in the country, so we’ve made things easy by sectioning this guide into the four main areas for you to get your fix of fresh air and lush greenery.\r\n\r\nSwan Lake at Singapore Botanic Gardens.\r\nCentral Region\r\nReplete with rare flowers, vertical gardens (aka Supertrees), and intriguing sculptures from around the world, Gardens by the Bay is a stunning park consisting of three waterfront gardens.\r\n\r\nGet a bird’s-eye view of the city from the 22-metre-high aerial walkway that links two Supertrees together, visit the world’s largest glass greenhouse or marvel at a 35-metre-tall indoor waterfall. For an unforgettable view of the Marina Bay district, be sure to check out the Supertree Observatory, located atop the tallest structure of the Supertree Grove.\r\n\r\nFrom one iconic spot to another, the Singapore Botanic Gardens is a must-visit. Recognised as a UNESCO World Heritage Site in 2015, this green space, which is more than 150 years old, features highlights such as National Orchid Garden, a gorgeous swan lake and heaps of tropical trees to please every plant enthusiast out there.\r\n\r\nTravelling with the little ones? Take them to the Jacob Ballas Children\'s Garden, which houses a farm, orchard and grove with its own streams and ponds.\r\n\r\nSuperTrees at the Gardens by the Bay. \r\nPhoto by Afur Wong\r\nHeliconia flowers at the Singapore Botanic Gardens. \r\nUp for a hike? Visit the MacRitchie Nature Trail & Reservoir Park. Complete the 11-kilometre-long nature trail and don’t miss the Treetop Walk, a 250-metre high suspension bridge that connects two of the park\'s highest points.\r\n\r\nHistory buffs, make a beeline for Fort Canning Park. Conveniently located in the heart of town, this site is home to numerous historical landmarks, such as Fort Gate, a remnant of a fortress that was built in the 19th century, and other highlights like the Spice Garden.\r\n\r\nJust a little outside of the central area are venues like Bukit Timah Nature Reserve. Take on the challenge and hike the Summit Trail to climb Singapore\'s tallest hill (it\'s 164-metres high) in this lush ASEAN Heritage Park.\r\n\r\nSouthern Region\r\nA wall with different greenery at HortPark. \r\nFurther south of Singapore, there’s Mount Faber and HortPark. These two green spots are part of a 10-kilometre-long trail called the Southern Ridges, which features structures like the Henderson Waves, the highest pedestrian bridge in Singapore, and bridges such as the Forest Walk and Canopy Walk. \r\n\r\nNorth Eastern Region\r\nSeletar Reservoir is split into two areas: Lower Seletar Reservoir Park and Upper Seletar Reservoir Park.\r\n\r\nLower Seletar Reservoir Park has highlights like the Family Bay, which consists of a performance stage, a Heritage Bridge, a bioswale rain garden, and a water play area for the young ones. There\'s also a fishing jetty that\'s usually packed with anglers hoping to catch a tilapia or two.\r\n\r\nPopular with runners, Upper Seletar Reservoir Park features several trails and landmarks such as the rocket-shaped tower, which you can climb to the top of and take in breathtaking views of the park.\r\n\r\nAerial view of the coastal walkway in Punggol Waterway. \r\nThere\'s something for everyone at Punggol Waterway, which is segmented into four zones: Nature Cove, Recreation Zone, Heritage Zone, and Green Gallery. Rent a bicycle and cycle around the park, let the kids have fun at the water playground, look out for unique birds along the waterway, or simply snap landscape photos in the evening to capture the beauty of this green heartland destination.\r\n\r\nWestern Region\r\nThe Observation Pod at Sungei Buloh Wetland Reserve. \r\nPhoto by Vincent Chong\r\nThe 87-hectare Sungei Buloh Wetland Reserve is bound to impress nature lovers with its incredible biodiversity. First discovered by a group of birdwatchers from the Malayan Nature Society in 1986, this site is home to migratory birds, crabs, mud lobsters and even crocodiles and otters.\r\n\r\nTake a stroll along the boardwalk to look at the mangroves at low tide or park yourself at one of the many observation posts found throughout the reserve to watch familiar critters in their natural habitats.\r\n\r\nTo immerse yourself in nature, pay a visit to Jurong Lake Gardens, a 90-hectare green sanctuary that comprises Lakeside Garden, the Chinese Garden, Japanese Garden and Promenade. \r\n\r\nThe latter three spaces are slated to open in 2021, but nature lovers and their families can still enjoy the great outdoors at Lakeside Garden. This verdant space is filled with play spaces like Crab Play and Heron Play, which take inspiration from various animal species.  Tidal and sand play areas are bound to keep your little ones occupied, while couples looking for a quiet stroll can take a meander along into lalang (a species of grass traditionally used to thatch roofs in Southeast Asia) fields, or along scenic waterside boardwalks.\r\n\r\nhttps://www.visitsingapore.com/en_ph/editorials/singapores-iconic-green-spaces/', '2010110148188.1.jpg-2010110148188.2.jpg-2010110148188.3.jpg-2010110148188.4.jpg-2010110148188.5.jpg', 'Nature lovers and outdoor enthusiasts, escape from the city and explore Singapore’s green spaces for', '201011014818');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `db_invoice`
+--
+
+CREATE TABLE `db_invoice` (
+  `id` int(11) NOT NULL,
+  `guest_name` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `guest_number` int(11) NOT NULL,
+  `num_adult` int(11) NOT NULL,
+  `num_kid` int(11) NOT NULL,
+  `date_bought` date NOT NULL,
+  `total` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -235,6 +279,12 @@ ALTER TABLE `db_gallary`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `db_invoice`
+--
+ALTER TABLE `db_invoice`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `db_photo_animal`
 --
 ALTER TABLE `db_photo_animal`
@@ -268,13 +318,13 @@ ALTER TABLE `db_user`
 -- AUTO_INCREMENT for table `db_animal`
 --
 ALTER TABLE `db_animal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `db_category`
 --
 ALTER TABLE `db_category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `db_event`
@@ -293,6 +343,12 @@ ALTER TABLE `db_feedback`
 --
 ALTER TABLE `db_gallary`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `db_invoice`
+--
+ALTER TABLE `db_invoice`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `db_photo_animal`

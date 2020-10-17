@@ -88,6 +88,7 @@ if (isset($_POST['btnChangeCategory'])) {
                                 <a class="nav-link nav-gallery" href="index.php?page=admin_gallery">Gallery</a>
                                 <a class="nav-link nav-event" href="index.php?page=admin_event">Event</a>
                                 <a class="nav-link nav-ticket" href="index.php?page=admin_ticket">Ticket</a>
+                                <a class="nav-link nav-invoice" href="index.php?page=admin_invoice">Invoice</a>
                             </nav>
                         </div>
                     </div>

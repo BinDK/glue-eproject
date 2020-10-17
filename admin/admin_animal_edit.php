@@ -72,7 +72,7 @@ $output = mysqli_fetch_array($input);
 </div>
 
 <div align="center">
-<a href="index.php?page=dien" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">BACK TO DETAIL</a>
+<a href="index.php?page=admin_animal" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">BACK TO DETAIL</a>
 </div>
 <style type="text/css">
     .nav-animal{

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand navbar-expand-md navbar-dark bg-dark pb-1 d-flex justify-content-between">
   <div class="navbar-brand ">
-    <a href="./" class="text text-muted text-decoration-none"><span style="letter-spacing: 4px;">SINGAPORE ZOO</span> </a>
+    <a href="./" class="text text-muted text-decoration-none"><span style="letter-spacing: 4px;">SINGAPORE CENTRAL ZOO</span> </a>
     </div>
     <!-- Float links to the right. Hide them on small screens -->
     <div class="nav-item text-white">

@@ -1,40 +1,75 @@
-<?php
+<?php 
 require_once 'admin/connect.php';
-$input = mysqli_query($con, 'select * from db_animal');
-$input2 = mysqli_query($con, 'select * from db_animal order by RAND()');
-$input_category = mysqli_query($con, 'select * from db_category');
-// $lenght[] = mysqli_fetch_lengths($input);
-if (isset($_POST['buttonSearch'])) {
-  if ($_POST['category'] == -1) {
-    $input = mysqli_query($con, 'select * from db_animal');
-    $input2 = mysqli_query($con, 'select * from db_animal');
-  } else {
-    $input = mysqli_query($con, 'select * from db_animal where category_id = ' . $_POST['category']);
-    $input2 = mysqli_query($con, 'select * from db_animal where category_id = ' . $_POST['category']);
-  }
-};
-?>
-<div class="container-fluid " style="background-color: rgba(133,240,234,0.2) !important;" id="ticket">
-    <span class="text-nowrap text-left m-0 p-0 " style="font-size: 30px">Animal</span>
-</div>
-<div class="container-fluid">
-    <!-- CATEGORY -->
+$category_id = '';
+$result = mysqli_query($con, 'select * from db_animal');
+$result2 = mysqli_query($con, 'select * from db_animal order by RAND()');
+$categories = mysqli_query($con,'select * from db_category');
+
+ ?>
+<script src="admin/js/jquery-3.5.1.min.js"></script>
+<script>
+    $(document).ready(function() {
+$('#comboboxCategory').change(function() {
+ var categoryId = $('#comboboxCategory option:selected').val(); 
+ $.ajax({
+        type: 'GET',
+        url: 'ajaxAnimal.php',
+        data: {categoryId: categoryId},
+        dataType: 'json',
+        contentType: 'application/json',
+        success: function(result){
+                var s = '';
+                var counter3 = 0;
+                var x = '';
+                var counter4 = 0;
+
+                for (var i = 0; i < result.length; i++) {
+                if (counter4 == 0) {
+                x += '<li data-target="#carouselExampleIndicators1" data-slide-to="'+ result[i].id +'" class="active"></li>';
+            }   else {
+                x += '<li data-target="#carouselExampleIndicators1" data-slide-to="'+ result[i].id +'" class=""></li>';
+                } counter4++;
+            }
+                for (var i = 0; i < result.length; i++) {
+                if (counter3 == 0) {
+                s += '<div class="carousel-item active">';
+                s += '<img src="img/animalPhoto/'+ result[i].avatar +'" class="d-block w-100" height="550" alt="Ask the dev for picture"></div>';  
+                s += "</div>";
+            }   else {
+                s += '<div class="carousel-item">';
+                s += '<img src="img/animalPhoto/'+ result[i].avatar +'" class="d-block w-100" height="550" alt="Ask the dev for picture"></div>';  
+                s += "</div>";
+                } //end else
+                counter3++;
+            }
+            $('#carouselExampleIndicators1 .carousel-indicators').html(x)
+            $('#carouselExampleIndicators1 .carousel-inner').html(s);
+        }
+    });
+            
+        });
+    });
+
+
+</script>
+<link rel="stylesheet" href="bootstrap.min.css">
+<!-- <script src="admin/js/jquery-3.5.1.min.js"></script> -->
+<script src="admin/js/bootstrap.min.js"></script>
     <form method="post">
         Category <select name="category" style="width:200px" id="comboboxCategory">
             <option value="-1">All</option>
-            <?php while ($category = mysqli_fetch_array($input_category)) { ?>
-            <option value="<?= $category['id'] ?>">
-                <?= $category['species_name'] ?>
-            </option>
+            <?php while ($category = mysqli_fetch_array($categories)) { ?>
+            <option value="<?= $category['id'] ?>"><?= $category['species_name'] ?></option>
             <?php } ?>
         </select>
-        <a target="_self"><button type="submit" name="buttonSearch">Search</button></a>
     </form>
-</div>
+
+
+
 <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
     <!-- Indicator -->
     <ol class="carousel-indicators">
-        <?php $counter =0;  while ($indi = mysqli_fetch_array($input)) { 
+        <?php $counter =0;  while ($indi = mysqli_fetch_array($result)) { 
     if ($counter == 0) { ?>
         <li data-target="#carouselExampleIndicators1" data-slide-to="<?= $indi['id'] ?>" class="active"></li>
         <?php } else {?>
@@ -44,13 +79,15 @@ if (isset($_POST['buttonSearch'])) {
     </ol>
     <!-- slide -->
     <div class="carousel-inner">
-        <?php $counter2 = 0; while ($output = mysqli_fetch_array($input2)) { 
+        <?php $counter2 = 0; while ($output = mysqli_fetch_array($result2)) { 
         if ($counter2 == 0) { ?>
         <div class="carousel-item active">
-            <img src="img/animalPhoto/<?= $output['avatar'] ?>" class="d-block w-100" height="550" alt="Ask the dev for picture"></div>
+            <img src="img/animalPhoto/<?= $output['avatar'] ?>" class="d-block w-100" height="550" alt="Ask the dev for picture">
+        </div>
         <?php } else { ?>
         <div class="carousel-item">
-            <img src="img/animalPhoto/<?= $output['avatar'] ?>" class="d-block w-100" height="550" alt="Ask the dev for picture"></div>
+            <img src="img/animalPhoto/<?= $output['avatar'] ?>" class="d-block w-100" height="550" alt="Ask the dev for picture">
+        </div>
         <?php } $counter2++;?>
         <?php } ?>
     </div>
@@ -63,31 +100,3 @@ if (isset($_POST['buttonSearch'])) {
         <span class="sr-only">Next</span>
     </a>
 </div>
-<style>
-.btn:hover {
-    color: black !important;
-    background-color: #fff !important;
-}
-
-.btn.btn-lg:active {
-    color: white !important;
-}
-
-.btn.btn-lg:focus {
-    /* backgr */
-    color: white !important;
-    border-color: transparent !important;
-    background-color: transparent !important;
-    outline: 0 !important;
-    box-shadow: 0 0 0 0 !important;
-}
-
-.text:hover {
-    color: #ccc !important;
-}
-</style>
-<script>
-$('.btn').click(function() {
-    $(this).addClass('active').siblings().removeClass('active');
-});
-</script>

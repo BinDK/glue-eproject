@@ -11,11 +11,9 @@ $text = $_POST['text'];
 mysqli_query($con,'INSERT INTO db_feedback (user_name,user_email,user_phone,user_text) VALUES ("'.$name.'", "'.$email.'", "'.$phone.'", "'.$text.'") ');
 }
 ?>
-<div class=" pb-1 mt-1" style="width: 100%;">
+<div class=" pb-1 mt-1" style="width: 100%;" id="contact">
 <div class="card" style="padding:50px 100px;">
     <div class="row no-gutters">
-        <div class="card-header" style="background: url('img/contact.jpg') top left/cover no-repeat;display: table-cell; width: 31%;">
-        </div>
             <div class="card-body m-5">
               <h3>We're very appreciate your feedback :)</h3>
                 <form method="POST" onload="return false;">

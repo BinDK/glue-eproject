@@ -3,31 +3,29 @@ require_once 'admin/connect.php';
 $result = mysqli_query($con, 'SELECT * FROM db_event where date >= curdate() order by date limit 3');
 
  ?>
-<div class="container-fluid " style="background-color: rgba(133,240,234,0.2) !important;" id="ticket">
+<div class="container-fluid " style="background-color: rgba(133,240,234,0.2) !important;" id="event">
     <span class="text-nowrap text-left m-0 p-0 " style="font-size: 30px">Event</span>
 </div>
-<div class="container-fluid" style="background: url('img/eventBackground.jpg') no-repeat center center/cover; height: 550px">
-        <div class="row m-auto pt-5">
+<div class="container-fluid" style="">
+        <div class="row m-auto pt-5 pb-5">
             <?php while ($event = mysqli_fetch_array($result)) { ?>
-            <div class="col col-md-4 col-xl-4">
-                <h3 class="text text-primary text-center" style="color: #9541A3 !important;"><b>
+            <div class="col col-md-4" align="center">
+                <h3 class="text text-primary" style="color: #9541A3 !important;"><b>
                         <?= $event['title'] ?></b></h3>
-                <div class="hovereffect pl-5">
-                    <img src="img/eventUpload/<?= $event['event_photo'] ?>" alt="John" style="width:400px; height: 290px;">
-                    <div class="overlay">
+                    <img src="img/eventUpload/<?= $event['event_photo'] ?>" alt="John" class="img-fluid">
+                    <div >
                         <p>
                             <?= $event['description'] ?>
                         </p>
-                        <a class="infoEvent" href="event_detail.php?id=<?= $event['id'] ?>">Detail</a>
+                        <a class="infoEvent btn btn-block btn-secondary" href="event_detail.php?id=<?= $event['id'] ?>">Detail</a>
                     </div>
-                </div>
             </div>
             <?php } ?>
             <div class="w-100"></div>
         </div>
 </div>
 <style type="text/css">
-.hovereffect {
+/* .hovereffect {
     width: 100%;
     height: 100%;
     float: left;
@@ -118,5 +116,5 @@ $result = mysqli_query($con, 'SELECT * FROM db_event where date >= curdate() ord
     border: 1px solid #000;
     -webkit-transition-delay: 0.3s;
     transition-delay: 0.3s;
-}
+} */
 </style>

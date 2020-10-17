@@ -41,7 +41,7 @@ for ($i = 0; $i < $no_of_pages; $i++) {
 <!-- Gallery view all -->
 <?php
 if ($_GET['id'] === "viewall") { ?>
-    <div class="container" style="max-width: 100%;">
+    <div class="container pt-5" style="max-width: 100%;">
         <div class="row" style="padding-left: 100px;">
             <?php 
             $startItem = ($_GET['view'] - 1) * $item_perpage;

@@ -8,7 +8,7 @@
   <link href="style.css" rel="stylesheet" type="text/css"
   >
 <div class="container-fluid " style="background-color: rgba(133,240,234,0.2) !important;" id="gallery">
-  <span class="text-nowrap text-left m-0 p-0 " style="font-size: 30px">Gallery</span>
+<span class="text-nowrap text-left m-0 p-0 " style="font-size: 30px"><a href="gallery_view.php?id=viewall&view=1">Gallery</a></span>
 </div>
 
 
@@ -25,6 +25,7 @@
           <p><a class="btn btn- btn-block btn-secondary" href="gallery_view.php?id=<?= $gallery['id'] ?>">Detail</a></p>
         </div>
       <?php } ?>
+      <div class="w-100"></div>
     </div>
 </div>
 </body>

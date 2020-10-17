@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="bootstrap.min.css">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 <link href="style.css" rel="stylesheet" type="text/css">
 <?php
 require_once './admin/connect.php';
@@ -25,25 +24,37 @@ for ($i = 0; $i < $no_of_pages; $i++) {
 
 
 ?>
-<?php require_once  'header.php' ?>
-<br>
+<nav class="navbar navbar-expand navbar-expand-md navbar-dark bg-dark pb-1 d-flex justify-content-between">
+  <div class="navbar-brand ">
+    <a href="./" class="text text-muted text-decoration-none"><span style="letter-spacing: 4px;">SINGAPORE ZOO</span> </a>
+    </div>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="nav-item text-white">
+      <a href="index.php#animal" class="btn btn-lg text-muted">Animals</a>
+      <a href="#about" class="btn btn-lg text-muted">About us</a>
+      <a href="index.php#event" class="btn btn-lg text-muted">Events</a>
+      <a href="index.php#ticket" class="btn btn-lg text-muted">Ticket</a>
+      <a href="#gallery" class="btn btn-lg text-white bg-secondary">Gallery</a>
+      <a href="index.php#contact" class="btn btn-lg text-muted">Contact</a>
+    </div>
+</nav>
 <!-- Gallery view all -->
 <?php
 if ($_GET['id'] === "viewall") { ?>
-    <div class="container">
-        <div class="row-event" align="center">
+    <div class="container" style="max-width: 100%;">
+        <div class="row" style="padding-left: 100px;">
             <?php 
             $startItem = ($_GET['view'] - 1) * $item_perpage;
             $result = mysqli_query($con, 'select * from db_gallary limit ' . $item_perpage . ' offset ' . $startItem);
             while ($gallery_view_all = mysqli_fetch_array($result)) { ?>
-                <div class="col-3" style="max-width:320px">
+                <div class="col col-md-3" align="center" style="max-width:320px">
                     <?php
                         $photo_view_all = explode('-', $gallery_view_all['fileAddress']);
                     ?>
-                    <img src="./img/galleryUpload/<?= $photo_view_all[0] ?>" width="250px">
-                    <h3><?= $gallery_view_all['name'] ?></h3>
-                    <p><?= $gallery_view_all['shortDescription'] ?></p>
-                    <p><a class="w3-button w3-light-grey w3-block" href="gallery_view.php?id=<?= $gallery_view_all['id'] ?>">Detail</a></p>
+                    <img src="./img/galleryUpload/<?= $photo_view_all[0] ?>" class="img-fluid">
+                    <h5><?= $gallery_view_all['name'] ?></h5>
+                    <p class="text-truncate"><?= $gallery_view_all['shortDescription'] ?></p>
+                    <p><a class="btn btn-block btn-secondary" href="gallery_view.php?id=<?= $gallery_view_all['id'] ?>">Detail</a></p>
                 </div>
             <?php } ?>
         </div>

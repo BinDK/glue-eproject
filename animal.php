@@ -6,7 +6,7 @@ $input2 = mysqli_query($con, 'select * from db_animal order by rand() LIMIT 1');
 $input_category = mysqli_query($con, 'select * from db_category');
 $input_category1 = mysqli_query($con, 'select * from db_category');
 ?>
-<div class="container-fluid " style="background-color: rgba(133,240,234,0.2) !important;" id="ticket">
+<div class="container-fluid " style="background-color: rgba(133,240,234,0.2) !important;" id="animal">
   <span class="text-nowrap text-left m-0 p-0 " style="font-size: 30px">ANIMAL</span>
 </div>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -24,7 +24,7 @@ $input_category1 = mysqli_query($con, 'select * from db_category');
     text-align: left;
   }
 
-  img {
+  #animalPhoto {
     width: 100%;
     height: 300px;
   }
@@ -153,7 +153,7 @@ $input_category1 = mysqli_query($con, 'select * from db_category');
     <div class="w3-light-grey w3-card-2" style="padding:16px;">
       <h3>Image of <span style="font-style: italic;" class="nameAjax"><?= $output['name'] ?></span>:</h3>
       <div class="w3-code htmlHigh notranslate w3-border-green imageAjax">
-        <img src="img/animalPhoto/<?= $output['avatar'] ?>" width="100%" alt="Ask the dev for image">
+        <img id="animalPhoto" src="img/animalPhoto/<?= $output['avatar'] ?>" alt="Ask the dev for image">
       </div>
     </div>
   </div>
@@ -224,7 +224,7 @@ toggle between hiding and showing the dropdown content */
           for (var i = 0; i < result.length; i++) {
             sName += result[i].name;
             sDescription += result[i].description;
-            sImage += '<img src="img/animalPhoto/' + result[i].avatar + '" width="100%">';
+            sImage += '<img src="img/animalPhoto/' + result[i].avatar + '" id="animalPhoto">';
           }
           $('.nameAjax').html(sName);
           $('.descriptionAjax').html(sDescription);

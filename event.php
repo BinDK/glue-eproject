@@ -4,7 +4,7 @@ $result = mysqli_query($con, 'SELECT * FROM db_event where date >= curdate() ord
 
  ?>
 <div class="container-fluid " style="background-color: rgba(133,240,234,0.2) !important;" id="event">
-    <span class="text-nowrap text-left m-0 p-0 " style="font-size: 30px">Event</span>
+    <span class="text-nowrap text-left m-0 p-0 " style="font-size: 30px"><a href="event_all_detail.php">Event</a></span>
 </div>
 <div class="container-fluid" style="">
         <div class="row m-auto pt-5 pb-5">

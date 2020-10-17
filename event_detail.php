@@ -5,7 +5,20 @@ $event = mysqli_fetch_array($result);
  ?>
 
 
-<?php require_once isset($_GET['page']) ? $_GET['page'].'.php' : 'header.php'; ?>
+<nav class="navbar navbar-expand navbar-expand-md navbar-dark bg-dark pb-1 d-flex justify-content-between">
+  <div class="navbar-brand ">
+    <a href="./" class="text text-muted text-decoration-none"><span style="letter-spacing: 4px;">SINGAPORE ZOO</span> </a>
+    </div>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="nav-item text-white">
+      <a href="index.php#animal" class="btn btn-lg text-muted">Animals</a>
+      <a href="#about" class="btn btn-lg text-muted">About us</a>
+      <a href="#event" class="btn btn-lg text-white bg-secondary">Events</a>
+      <a href="index.php#ticket" class="btn btn-lg text-muted">Ticket</a>
+      <a href="index.php#gallery" class="btn btn-lg text-muted">Gallery</a>
+      <a href="index.php#contact" class="btn btn-lg text-muted">Contact</a>
+    </div>
+</nav>
 
 <!DOCTYPE html>
 <html>
@@ -17,11 +30,9 @@ $event = mysqli_fetch_array($result);
 	<link rel="stylesheet" href="bootstrap.min.css"> 
 </head>
 <body>
-<div class="card flex-row m-5 " style="height: 300px; background-color: #ECECEC !important;">
-    <div class="card-header border-0"><img width="350" height="275" src="img/eventUpload/<?= $event['event_photo'] ?>" alt=""></div>
-    <div class="card-block px-2">  
-    <h5 class="card-text pt-2 text-primary"><?= $event['detail'] ?></h5>
-  </div>
+<div class="container pt-4" align="center">
+  <div><img width="700" height="400" class="img-fluid" src="img/eventUpload/<?= $event['event_photo'] ?>" alt=""></div>
+  <div class="text-primary pt-2" style="font-size: 20px;"><?= $event['detail']; ?></div>
 </div>
   <div class=" ml-5 mb-5 mt-1">
     <a class="btn btn-lg btn-success" href="index.php">Go Back</a>

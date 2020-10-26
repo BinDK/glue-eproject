@@ -3,14 +3,13 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 17, 2020 at 10:03 AM
+-- Generation Time: Oct 26, 2020 at 07:54 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -134,6 +133,13 @@ CREATE TABLE `db_feedback` (
   `user_text` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `db_feedback`
+--
+
+INSERT INTO `db_feedback` (`id`, `user_name`, `user_email`, `user_phone`, `user_text`) VALUES
+(1, 'Daniel Cloud', 'skillmethodz@weareback.com', 1293313, 'Sup!! Love your zoo dawg.');
+
 -- --------------------------------------------------------
 
 --
@@ -178,6 +184,14 @@ CREATE TABLE `db_invoice` (
   `date_bought` date NOT NULL,
   `total` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `db_invoice`
+--
+
+INSERT INTO `db_invoice` (`id`, `guest_name`, `guest_number`, `num_adult`, `num_kid`, `date_bought`, `total`) VALUES
+(1, 'Rick Grimes', 555455579, 1, 32, '2020-10-17', 3000),
+(2, 'Daniel Cloud', 9324442, 3, 1, '2020-10-20', 450);
 
 -- --------------------------------------------------------
 
@@ -336,7 +350,7 @@ ALTER TABLE `db_event`
 -- AUTO_INCREMENT for table `db_feedback`
 --
 ALTER TABLE `db_feedback`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `db_gallary`
@@ -348,7 +362,7 @@ ALTER TABLE `db_gallary`
 -- AUTO_INCREMENT for table `db_invoice`
 --
 ALTER TABLE `db_invoice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `db_photo_animal`

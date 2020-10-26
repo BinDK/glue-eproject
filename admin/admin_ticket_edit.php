@@ -33,17 +33,17 @@ if (isset($_POST['btnChangeTicket'])) {
                                         <form method="post">
                                             <div class="form-group">
                                                 <label class="small mb-1" for="editName">Name</label>
-                                                <input class="form-control py-4" name="editName" type="text" placeholder="Enter new title">
+                                                <input class="form-control py-4" name="editName" type="text" placeholder="Enter new Ticket Name">
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="small mb-1" for="editType">Type</label>
-                                                <input class="form-control py-4" name="editType" type="text" placeholder="Enter new Type">
+                                                <input class="form-control py-4" name="editType" type="text" placeholder="Enter new Ticket Type">
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="small mb-1" for="editPrice">Price</label>
-                                                <input class="form-control py-4" name="editPrice" type="number" min="0" placeholder="Enter Price">
+                                                <input class="form-control py-4" name="editPrice" type="number" min="0" placeholder="Enter new Price">
                                             </div>
 
                                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">    

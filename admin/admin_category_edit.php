@@ -11,7 +11,6 @@ if (isset($_POST['btnChangeCategory'])) {
     mysqli_query($con,'update db_category set species_name = "'.$species.'", description = "'.$description.'" where id = '.$id);        
     }
  ?>
-<link href="css/styles.css" rel="stylesheet">
 
 <body class="bg-primary">
     <div id="layoutAuthentication">
@@ -29,7 +28,7 @@ if (isset($_POST['btnChangeCategory'])) {
                                 <div class="card-body">
                                     <form method="post" enctype="multipart/form-data">
                                         <div class="form-group">
-                                            <label class="small mb-1" for="species">Title</label>
+                                            <label class="small mb-1" for="species">Species Name</label>
                                             <input class="form-control py-4" name="species" type="text" placeholder="Enter new title" value="<?= $category['species_name'] ?>">
                                         </div>
                                         <div class="form-group">

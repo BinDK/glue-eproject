@@ -25,8 +25,7 @@ $event = mysqli_fetch_array($result);
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title></title>
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<title>Event All Detail</title>
 	<link rel="stylesheet" href="bootstrap.min.css"> 
 </head>
 <body>

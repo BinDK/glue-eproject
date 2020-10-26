@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>Singapore Central Zoo</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="bootstrap.min.css">
 <script src="admin/js/jquery-3.5.1.min.js"></script>
 <script src="admin/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+<script src="admin/js/font-awesome/all.min.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/font-awesome/all.min.css">
 <link rel="stylesheet" href="style.css">
 <body>
 

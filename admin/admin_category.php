@@ -71,14 +71,14 @@ while ($cate = mysqli_fetch_array($result)) {
     </div>
     </div>
     	<div>
-    		<button onclick="showAdd()" class="btn btn-primary">Add more cate</button>
+    		<button onclick="showAdd()" class="btn btn-primary">Add more Categories</button>
     	</div>
     </div>
 </div>
 
     <form method="post" id="addForm" style="display:none; margin:10px 50px;" enctype="multipart/form-data">
     	<h5>Add more Category </h5>
-			<input type="text" name="addSpecies" placeholder="Enter Title">
+			<input type="text" name="addSpecies" placeholder="Enter Species Name">
 			<input type="text" name="addDescription" placeholder="Enter Description ">
 			<input type="submit" name="addCateButton" value="Submit">
 </form>

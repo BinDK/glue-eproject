@@ -33,7 +33,7 @@ $result = mysqli_query($con, 'select * from db_gallary');
 </ol>
 <form method="post" style="width:300px" enctype="multipart/form-data">
     <div class="form-group">
-        <label for="name">Name</label>
+        <label for="name">Gallery's name</label>
         <input type="text" name="name">
     </div>
     <div class="form-group">
@@ -45,10 +45,10 @@ $result = mysqli_query($con, 'select * from db_gallary');
         <textarea name="description" cols="100" rows="5"></textarea>
     </div>
     <div class="form-group">
-        <label for="file">File</label>
-        <input type="file" name="photo[]" multiple="true">
+        <label for="file">Gallery Photo</label>
+        <input type="file" name="photo[]" accept=".png, .jpg, .jpeg" multiple="true">
     </div>
-    <input type="submit" name="buttonAdd" value="Add" id="created" class="btn btn-primary">
+    <input type="submit" name="buttonAdd" value="Add" id="created" class="btn btn-primary btn-lg w-75">
 </form>
 
 <table id="example" class="table table-striped table-bordered" style="width:100%">

@@ -128,7 +128,7 @@ while ($animal = mysqli_fetch_array($result)) {
         <td></td>
         <td><input class="form-control" placeholder="Insert name" type="text" name="name"></td>
         <td><textarea class="form-control" cols="30" rows="1" placeholder="Insert description" name="description"></textarea></td>
-        <td><input class="form-control" type="file" name="photo"></td>
+        <td><input class="form-control" type="file" accept=".png, .jpg, .jpeg" name="photo"></td>
         <td>
           <select class="form-control" name="category_id" id="">
             <?php while ($output_category = mysqli_fetch_array($input_category)) { ?>

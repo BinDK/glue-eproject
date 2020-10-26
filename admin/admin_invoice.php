@@ -1,6 +1,6 @@
 <?php 
 require_once 'connect.php';
-$result = mysqli_query($con,'select * from db_invoice');
+$result = mysqli_query($con,'select * from db_invoice order by id desc');
 
     if (isset($_GET['action'])) {
       if ($_GET['action'] == 'deleteInvoice') {
@@ -26,7 +26,7 @@ $result = mysqli_query($con,'select * from db_invoice');
 
 <div class="row">
     <div class="col-sm-12">
-<table class="table table-bordered dataTable" id="dataTable" role="grid" aria-describedby="dataTable_info" style="width: 100%;" width="100%" cellspacing="0">
+<table class="table table-bordered dataTable" id="dataTable1" role="grid" aria-describedby="dataTable_info" style="width: 100%;" width="100%" cellspacing="0">
 <thead>
     <tr role="row">
         <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 70.467px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">ID</th>
@@ -89,12 +89,9 @@ while ($invoice = mysqli_fetch_array($result)) {
 }
 </style>
 <script>
-function showAdd() {
-    var show = document.getElementById("addForm");
-    if (show.style.display === "none") {
-        show.style.display = "block";
-    } else {
-        show.style.display = "none";
-    }
-}
+$(document).ready(function() {
+    $('#dataTable1').DataTable( {
+        "order": [[ 3, "desc" ]]
+    } );
+} );
 </script>

@@ -3,7 +3,7 @@
 <div class="col-md-6 p-3"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4263757203335!2d106.68802821400804!3d10.778619592320068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3a9d97282b%3A0x45e74ca0fc0300dc!2sAptech%20Computer%20Education!5e0!3m2!1svi!2s!4v1601463722600!5m2!1svi!2s" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" width="400" height="200" frameborder="0"></iframe>
 </div>
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+<link rel="stylesheet" href="admin/css/font-awesome/all.min.css">
 <div class="col-md-6 mt-3 mb-3 ">
     <div id="about" class=" p-3 pl-4 text-white">
         <h4 class="">About us</h4>

@@ -12,7 +12,7 @@
 </div>
 
 
-  <div class="container-fluid" style="background-color: #EAE6E5 !important;">
+  <div class="container-fluid">
     <div class="row">
       <?php while ($gallery = mysqli_fetch_array($result)) { ?>
         <div class="col col-md-3" align="center">

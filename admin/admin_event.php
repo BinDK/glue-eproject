@@ -39,13 +39,13 @@ $result = mysqli_query($con,'select * from db_event');
 <table class="table table-bordered dataTable" id="dataTable" role="grid" aria-describedby="dataTable_info" style="width: 100%;" width="100%" cellspacing="0">
 <thead>
     <tr role="row">
-        <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 100.467px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">ID</th>
-        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 137.733px;" aria-label="Position: activate to sort column ascending">Title</th>
-        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 153.9px;" aria-label="Office: activate to sort column ascending">Detail</th>
+        <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 16px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">ID</th>
+        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 38px;" aria-label="Position: activate to sort column ascending">Title</th>
+        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 600px;" aria-label="Office: activate to sort column ascending">Detail</th>
         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 70.2833px;" aria-label="Age: activate to sort column ascending">Date</th>
-        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 50.2833px;" aria-label="Photo: activate to sort column ascending">Photo</th>
-        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 280.55px;" aria-label="Start date: activate to sort column ascending">Desciption</th>
-        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 119.067px;" aria-label="Salary: activate to sort column ascending">Edit</th>
+        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 200.2833px;" aria-label="Photo: activate to sort column ascending">Photo</th>
+        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 70.55px;" aria-label="Start date: activate to sort column ascending">Desciption</th>
+        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 103px;" aria-label="Salary: activate to sort column ascending">Edit</th>
     </tr>
 </thead>
 <tfoot>
@@ -65,14 +65,14 @@ $odd = 'odd';
 $even = 'even';
 while ($event = mysqli_fetch_array($result)) { 
     $i = 0;
-    $even_this_Shit = ($i/2==0) ? $odd : $even;
+    $even_odd = ($i/2==0) ? $odd : $even;
     ?>
-            <tr role="row" class="<?= $even_this_Shit ?>">
+            <tr role="row" class="<?= $even_odd ?>">
                 <td><?= $event['id'] ?></td>
                 <td><?= $event['title'] ?></td>
                 <td><?= $event['detail'] ?></td>
                 <td><?= $event['date'] ?></td>
-                <td><img src="../img/eventUpload/<?= $event['event_photo'] ?>" width="50" height="50"></td>
+                <td><img src="../img/eventUpload/<?= $event['event_photo'] ?>" width="100" height="100"></td>
                 <td><?= $event['description'] ?></td>
                 <td align="center"><a href="index.php?page=admin_event_edit&id=<?= $event['id']; ?>">Edit</a> |
                 <a onclick="return confirm('Are you really want to delete it??')" href="index.php?page=admin_event&id=<?= $event['id']?>&action=deleteEvent">Delete</a>

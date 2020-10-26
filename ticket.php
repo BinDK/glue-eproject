@@ -8,9 +8,11 @@ $date_bought = date('Y-m-d');
 if (isset($_POST['buyTicket'])) {
     $guest_name = $_POST['guest_name'];
     $guest_phone = $_POST['guest_phone'];
-    $numAdult = $_POST['numAdult'] * $price1;
-    $numKid = $_POST['numKid'] * $price2;
-    $total = $numAdult + $numKid;
+    $numAdult = $_POST['numAdult'];
+    $numKid = $_POST['numKid'];
+    $priceAdult = $numAdult * $price1;
+    $priceKid = $numKid * $price2;
+    $total = $priceAdult + $priceKid;
     mysqli_query($con,'INSERT INTO `db_invoice`(`guest_name`, `guest_number`, `num_adult`, `num_kid`, `date_bought`, `total`) VALUES ("'.$guest_name.'","'.$guest_phone.'","'.$numAdult.'","'.$numKid.'","'.$date_bought.'","'.$total.'")');
 }
  ?>

@@ -32,7 +32,7 @@ if (isset($_GET['action'])) {
     <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 153.9px;" aria-label="Office: activate to sort column ascending">User_email</th>
     <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 70.2833px;" aria-label="Age: activate to sort column ascending">User_phone</th>
     <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 329.55px;" aria-label="Start date: activate to sort column ascending">User_text</th>
-    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 119.067px;" aria-label="Salary: activate to sort column ascending">Edit Answer</th>
+    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="width: 119.067px;" aria-label="Salary: activate to sort column ascending">Delete</th>
 </tr>
 </thead>
 <tfoot>
@@ -41,7 +41,7 @@ if (isset($_GET['action'])) {
     <th rowspan="1" colspan="1">User_email</th>
     <th rowspan="1" colspan="1">User_phone</th>
     <th rowspan="1" colspan="1">User_text</th>
-    <th rowspan="1" colspan="1">Edit-Answer</th>
+    <th rowspan="1" colspan="1">Delete</th>
 </tr>
 </tfoot>
     <tbody>
@@ -50,15 +50,15 @@ $odd = 'odd';
 $even = 'even';
 while ($feedback = mysqli_fetch_array($result)) { 
     $i = 0;
-    $even_this_Shit = ($i/2==0) ? $odd : $even;
+    $even_odd = ($i/2==0) ? $odd : $even;
     ?>
-            <tr role="row" class="<?= $even_this_Shit ?>">
+            <tr role="row" class="<?= $even_odd ?>">
                 <td><?= $feedback['id'] ?></td>
                 <td><?= $feedback['user_name'] ?></td>
                 <td><?= $feedback['user_email'] ?></td>
                 <td><?= $feedback['user_phone'] ?></td>
                 <td><?= $feedback['user_text'] ?></td>
-                <td align="center"><a href="index.php?page=admin_feedback_answer&id=<?= $feedback['id']?>&name=<?= $feedback['user_name'] ?>">Answer</a> |
+                 <td align="center"><!--<a href="index.php?page=admin_feedback_answer&id=< ?= $feedback['id']?>&name=< ?= $feedback['user_name'] ?>">Answer</a> | -->
                 <a onclick="return confirm('Are you really want to delete it??')" href="index.php?id=<?= $feedback['id']?>&action=deleteFB">Delete</a>
                 </td>
             </tr>

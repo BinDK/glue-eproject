@@ -7,11 +7,6 @@ if (isset($_POST['btnLogin'])) {
             $username = $_POST['username'];
             $password = $_POST['password'];
             while ($account = mysqli_fetch_array($result)) {
-            // if ($username == $account['username'] && $password == $account['password']) {
-            // while ($account = mysqli_fetch_array($result)) {
-            // if ($username == $account['username'] && $password == $account['password']) { sql injection chổ $result phía dưới
-
-            // $result = mysqli_query($con, 'select * from db_user where username = "'.$username.'" and password = "'.$password.'"');
             if ($username == $account['username'] && $password == $account['password']) {
                 $_SESSION['admin'] = $username;
                 header('Location:index.php');

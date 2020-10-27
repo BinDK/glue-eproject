@@ -34,5 +34,22 @@
 
 <!-- Footer -->
 <?php require_once 'footer.php'; ?>
+<style>
+.navbar-nav, .show {
+    /* display: -ms-flexbox; */
+    display: flex;
+    -ms-flex-direction: row !important;
+    flex-direction: row !important;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+.navbar-nav, .show  > li{
+    padding-right: 1rem;
+}
+html{
+	scroll-behavior: smooth;
+}
+</style>
 </body>
 </html>

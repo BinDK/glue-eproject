@@ -1,19 +1,19 @@
-<nav class="navbar navbar-expand navbar-expand-md navbar-dark bg-dark pb-1 d-flex justify-content-between">
-  <div class="navbar-brand ">
-    <a href="./" class="text text-muted text-decoration-none"><span style="letter-spacing: 4px;">SINGAPORE CENTRAL ZOO</span> </a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark pb-1 d-flex justify-content-between">
+    <div class="navbar-brand ">
+        <a href="./" class="text text-muted text-decoration-none"><span style="letter-spacing: 4px;"><span class="text-white">SINGAPORE CENTRAL</span> ZOO</span> </a>
     </div>
-    <!-- Float links to the right. Hide them on small screens -->
-    <div class="nav-item text-white">
-      <a href="#animals" class="btn btn-lg text-muted">Animals</a>
-      <a href="#about" class="btn btn-lg text-muted">About us</a>
-      <a href="#event" class="btn btn-lg text-muted">Events</a>
-      <a href="#ticket" class="btn btn-lg text-muted">Ticket</a>
-      <a href="#gallery" class="btn btn-lg text-muted">Gallery</a>
-      <a href="#contact" class="btn btn-lg text-muted">Contact</a>
-    </div>
+    <button class="navbar-toggler" data-toggle="collapse" id="bars" data-target="#menu"><span class="navbar-toggler-icon"></span></button>
+    <ul class="nav navbar-nav collapse navbar-collapse" id="menu">
+        <li class="nav-item"><a href="#animals" class="nav-link btn btn-lg text-muted">Animals</a></li>
+        <li class="nav-item"><a href="#about" class="nav-link btn btn-lg text-muted">About us</a></li>
+        <li class="nav-item"><a href="#event" class="nav-link btn btn-lg text-muted">Events</a></li>
+        <li class="nav-item"><a href="#ticket" class="nav-link btn btn-lg text-muted">Ticket</a></li>
+        <li class="nav-item"><a href="#gallery" class="nav-link btn btn-lg text-muted">Gallery</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link btn btn-lg text-muted">Contact</a></li>
+    </ul>
 </nav>
-<!-- Slideshow - Carousel -->
 
+<!-- Slideshow - Carousel -->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 <!--   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -40,9 +40,6 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
-
-
 
 <style>
   .btn:hover{

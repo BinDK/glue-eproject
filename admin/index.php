@@ -124,6 +124,9 @@ if (isset($_POST['btnChangeCategory'])) {
     <script src="js/jquery.dataTables.min.js"></script>
     <script src="js/dataTables.bootstrap4.min.js"></script>
     <script src="assets/demo/datatables-demo.js"></script>
+    <style>
+    .odd{background-color: rgba(199, 146, 146, 0.1)}
+</style>
 </body>
 
 </html>

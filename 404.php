@@ -54,7 +54,7 @@ header( "Refresh:3.4; url=index.php", true, 303);
     </nav>
     <h3 align="center">Oh!!! Look like you run into some trounle, worry-free we will direct you to the homepage just a few second.<br><p>Error code:404</p></h3>
     <div class="container-fluid">
-        <img src="img/404/gate2.png" class="gate img-fluid" style="width: 397px !important; height: 700px !important" align="left">
+        <img src="img/404/gate.png" class="gate img-fluid" style="width: 397px !important; height: 700px !important" align="left">
     <img src="img/404/voi.gif" class="run img-fluid" style="width: 397px !important; height: 616px !important;" align="right">
 </div>
 </body>

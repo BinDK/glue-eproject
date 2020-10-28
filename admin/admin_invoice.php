@@ -91,7 +91,7 @@ while ($invoice = mysqli_fetch_array($result)) {
 <script>
 $(document).ready(function() {
     $('#dataTable1').DataTable( {
-        "order": [[ 3, "desc" ]]
+        "order": [[ 0, "desc" ]]
     } );
 } );
 </script>

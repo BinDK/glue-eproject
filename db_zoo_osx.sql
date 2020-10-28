@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 26, 2020 at 07:54 AM
+-- Generation Time: Oct 27, 2020 at 01:55 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -196,30 +196,6 @@ INSERT INTO `db_invoice` (`id`, `guest_name`, `guest_number`, `num_adult`, `num_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `db_photo_animal`
---
-
-CREATE TABLE `db_photo_animal` (
-  `id` int(11) NOT NULL,
-  `photo` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
-  `animal_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `db_photo_gallary`
---
-
-CREATE TABLE `db_photo_gallary` (
-  `id` int(11) NOT NULL,
-  `photo` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
-  `gallary_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `db_ticket`
 --
 
@@ -299,20 +275,6 @@ ALTER TABLE `db_invoice`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `db_photo_animal`
---
-ALTER TABLE `db_photo_animal`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `animal_id` (`animal_id`);
-
---
--- Indexes for table `db_photo_gallary`
---
-ALTER TABLE `db_photo_gallary`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `gallary_id` (`gallary_id`);
-
---
 -- Indexes for table `db_ticket`
 --
 ALTER TABLE `db_ticket`
@@ -362,19 +324,7 @@ ALTER TABLE `db_gallary`
 -- AUTO_INCREMENT for table `db_invoice`
 --
 ALTER TABLE `db_invoice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `db_photo_animal`
---
-ALTER TABLE `db_photo_animal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `db_photo_gallary`
---
-ALTER TABLE `db_photo_gallary`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `db_ticket`
@@ -397,18 +347,6 @@ ALTER TABLE `db_user`
 --
 ALTER TABLE `db_animal`
   ADD CONSTRAINT `db_animal_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `db_category` (`id`);
-
---
--- Constraints for table `db_photo_animal`
---
-ALTER TABLE `db_photo_animal`
-  ADD CONSTRAINT `db_photo_animal_ibfk_1` FOREIGN KEY (`animal_id`) REFERENCES `db_animal` (`id`);
-
---
--- Constraints for table `db_photo_gallary`
---
-ALTER TABLE `db_photo_gallary`
-  ADD CONSTRAINT `db_photo_gallary_ibfk_1` FOREIGN KEY (`id`) REFERENCES `db_gallary` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
